@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,27 +9,65 @@
     <title>Bootstrap Template</title>
     <!-- Bootstrap -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  </head>
-  <body ng-controller="GreetingsController as greetingsCtrl">
-    
-    <h1>{{greetingsCtrl.greeting}}</h1>
-    <p>This is {{greetingsCtrl.who | uppercase}} speaking.</p>
-    
-    <div ng-controller="ContentController as contentCtrl">
-      <p>{{contentCtrl.content}}</p>
+    <link href="styles/main.scss" rel="stylesheet">
+</head>
+
+<body ng-controller="AjaxCtrl">
+
+    <div id="body" class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand" href="#">Title Here</a>
+            </div>
+            <div class="navbar-header pull-right">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="file in files" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="file in files" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="file in files" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+            </div>
+        </div>
     </div>
-
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+    </footer>
+        
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Include angular files & plugins -->
-    <script src="../bower_components/angular/angular.js"></script>
-    
-    <!-- Include My App's JS file(s)-->
-    <script src="app.js"></script>
-    <script src="my-module.js"></script>
+        <!-- Include angular files & plugins -->
+        <script src="../bower_components/angular/angular.js"></script>
 
-  </body>
+        <!-- Include My App's JS file(s)-->
+        <script src="app.js"></script>
+        <script src="ajaxService.js"></script>
+        <script src="ajaxController.js"></script>
+
+</body>
+
 </html>
