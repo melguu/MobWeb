@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // Concatenate all vendor scripts to vendor.js and app scripts to app.js 
+    // Concatenate all vendor scripts to vendor.js and app scripts to app.js
     concat: {
       options: {},
       vendor: {
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         dest: 'build/vendor.js'
       },
       app: {
-        src: ['src/**/*.js'],
+        src: ['src/app.js','src/**/*.js'],
         dest: 'build/app.js'
       }
     },
@@ -48,10 +48,10 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-                'src/**/*.css'],
+                'src/**/*.scss'],
           dest: 'build/css/'
         }]
-      },      
+      },
       html: {
         files: [{
           expand: true,
@@ -69,7 +69,7 @@ module.exports = function(grunt) {
             content = content.replace(/<script.*script>\s*\n*/g, "");
             // Add concatenated js files just before closing body tag
             content = content.replace(/<\/body>/, '<script src="vendor.js"></script>\n' +
-                                      '<script src="app.min.js"></script>\n</body>');
+                                      '<script src="app.js"></script>\n</body>');
             return content;
           }
         }
@@ -82,8 +82,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-copy');
-
+  grunt.loadNpmTasks('grunt-serve');
   // Default tasks
-  grunt.registerTask('default', ['concat', 'jshint', 'uglify', 'copy']);
+  grunt.registerTask('default', ['concat', 'jshint', 'uglify', 'copy', 'serve']);
 
 };

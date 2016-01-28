@@ -1,13 +1,14 @@
 {
-  "name": "temp-app-name",
+  "name": "kuveij",
   "description": "Simple seed template for an angular app.",
   "authors": [
-    "developerName"
+    "Arto Heino"
   ],
   "license": "ISC",
   "private": true,
   "dependencies": {
     "bootstrap": "~3.3.6",
-    "angular": "~1.4.8"
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.9"
   }
 }

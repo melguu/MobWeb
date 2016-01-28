@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('kuveij')
     .factory('ajaxService', function ($http) {
         return $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files')
             .success(function (data) {
