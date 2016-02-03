@@ -1,8 +1,9 @@
 <div class="row">
 <form id="fileForm">
     <input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)">
-    <input name="title" type="text">
-    <input name="description" type="text">
+    <input name="title" type="text" placeholder="title">
+    <input name="description" type="text" placeholder="description">
     <button ng-click="sendImage()">Upload</button>
 </form>
+    <p>{{upload}}</p>
 </div>

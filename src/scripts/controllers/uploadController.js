@@ -12,11 +12,12 @@ angular.module('kuveij')
             fd.append('mime-type', $scope.mimeType);
 
             var request = ajaxFactory.uploadFile(fd);
+            $scope.upload = "";
 
             request.then(function (response) {
-                console.log(response.data);
+                return $scope.upload = "Media uploaded";
             }, function (error) {
-                console.log(error.data);
+                return $scope.upload = "Media upload failed";
             });
         };
     });
