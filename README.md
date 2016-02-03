@@ -12,4 +12,4 @@ Project starting point template for Web Based Mobile Applications course.
 4. Develop in _src/_ folder
 5. Build using `grunt`
 6. Publish your _build/_
-7. Preview your app at `localhost:9000`
+7. Preview your app at `localhost:9000/src/app.html`
