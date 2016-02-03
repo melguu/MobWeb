@@ -1,5 +1,5 @@
 angular.module('kuveij')
-    .controller('UploadController', function ($scope, ajaxFactory) {
+    .controller('uploadController', function ($scope, ajaxFactory) {
         $scope.setMediaFile = function (element) {
             $scope.mimeType = element.files[0].type;
             $scope.type = $scope.mimeType.substr(0,5);
