@@ -20,4 +20,13 @@ angular.module('kuveij')
                 return $scope.upload = "Media upload failed";
             });
         };
+
+        ajaxFactory.loadAllMedia().success(function (data) {
+
+            if(data[0].userId === 13){
+                $scope.files = data;
+            }else{
+
+            }
+        });
     });
