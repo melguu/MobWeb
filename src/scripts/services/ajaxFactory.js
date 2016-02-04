@@ -10,6 +10,13 @@ angular.module('kuveij')
             });
         };
 
+        ajaxFunctions.loadUserMedia = function(username){
+            return $http.get(urlBase + 'files/' + username)
+                .success(function (data) {
+                    return data;
+                });
+        };
+
         ajaxFunctions.uploadFile = function (args) {
             return $http.post(urlBase + 'upload', args, {
                 transformRequest: angular.identity,
