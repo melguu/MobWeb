@@ -13,47 +13,55 @@
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header pull-left">
-        <a class="navbar-brand" href="#">Title Here</a>
-    </div>
-    <div class="navbar-header pull-right">
-        <div class="dropdown">
-            <a class="dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand" href="#">Title Here</a>
+        </div>
+        <div class="navbar-header pull-right">
+            <div class="dropdown">
+                <a class="dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
                 <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#/">Home</a></li>
-                <li><a href="#myImages">My Images</a></li>
-                <li><a href="#">JavaScript</a></li>
-            </ul>
+                <ul class="dropdown-menu">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#myImages">My Images</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li>
+                        <a href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">Register</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-</div>
 
-<div id="main" class="container">
-    <div ng-view></div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+    <div id="main" class="container">
+        <div ng-view></div>
     </div>
-</footer>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+    </footer>
 
-<!-- Include angular files & plugins -->
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/angular-route/angular-route.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- Include My App's JS file(s)-->
-<script src="scripts/app.js"></script>
-<script src="scripts/services/ajaxFactory.js"></script>
-<script src="scripts/controllers/mediaController.js"></script>
-<script src="scripts/controllers/uploadController.js"></script>
+    <!-- Include angular files & plugins -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+
+    <!-- Include My App's JS file(s)-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/ajaxFactory.js"></script>
+    <script src="scripts/controllers/mediaController.js"></script>
+    <script src="scripts/controllers/uploadController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
 
 </body>
 

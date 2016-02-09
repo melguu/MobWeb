@@ -3,11 +3,11 @@ angular.module('kuveij')
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
         var ajaxFunctions = {};
 
-        ajaxFunctions.loadAllMedia = function(){
+        ajaxFunctions.loadAllMedia = function () {
             return $http.get(urlBase + 'files')
                 .success(function (data) {
-                return data;
-            });
+                    return data;
+                });
         };
 
         ajaxFunctions.uploadFile = function (args) {
@@ -17,6 +17,28 @@ angular.module('kuveij')
                     'Content-Type': undefined
                 }
             });
+        };
+
+        ajaxFunctions.login = function (args) {
+            return $http.post(urlBase + 'login', $httpParamSerializer(args), {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .success(function (data) {
+                    return data.status;
+                });
+        };
+
+        ajaxFunctions.register = function (args) {
+            return $http.post(urlBase + 'register', $httpParamSerializer(args), {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .success(function (data) {
+                    return data.status;
+                });
         };
 
         return ajaxFunctions;

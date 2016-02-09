@@ -1,0 +1,7 @@
+<form id="registerForm" enctype="application/x-www-form-urlencoded">
+    <input name="username" type="text" placeholder="username" ng-model="uname">
+    <input name="email" type="text" placeholder="email" ng-model="email">
+    <input name="password" type="password" placeholder="password" ng-model="pword">
+    <button ng-click="sendRegister()">Register</button>
+</form>
+<p>{{ registered }}</p>
