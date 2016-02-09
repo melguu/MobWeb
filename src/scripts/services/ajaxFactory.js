@@ -11,7 +11,7 @@ angular.module('kuveij')
         };
 
         ajaxFunctions.loadUserMedia = function(username){
-            return $http.get(urlBase + 'files/' + username)
+            return $http.get(urlBase + 'files/user/' + username)
                 .success(function (data) {
                     return data;
                 });
