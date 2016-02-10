@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <form id="commentForm">
-        <input name="comment" type="text" placeholder="comment">
+        <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
         <button ng-click="sendComment()">Comment</button>
     </form>
     <p>{{commented}}</p>

@@ -13,4 +13,17 @@ angular.module('kuveij')
             $scope.comments = data;
         });
 
+        $scope.sendComment = function(){
+            var userID = "6";
+
+            var dataToComment = {
+                user: userID,
+                comment: $scope.comment_add
+            };
+
+            ajaxFactory.postComment(id,dataToComment).success(function (data) {
+                $scope.commented = data;
+            });
+        };
+
     });

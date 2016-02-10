@@ -1,5 +1,5 @@
 angular.module('kuveij')
-    .factory('ajaxFactory', function ($http) {
+    .factory('ajaxFactory', function ($http, $httpParamSerializer) {
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
         var ajaxFunctions = {};
 
@@ -31,9 +31,16 @@ angular.module('kuveij')
                 });
         };
 
-        ajaxFunctions.postComment = function (id) {
-            return $http.post(urlBase + 'comment/file/' + id) {
-            };
+        ajaxFunctions.postComment = function (id,args) {
+            console.log(args);
+            return $http.post(urlBase + 'comment/file/' + id , $httpParamSerializer(args), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+                .success(function (data) {
+                    return data.status;
+                });
         };
 
         ajaxFunctions.uploadFile = function (args) {
