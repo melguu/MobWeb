@@ -1,5 +1,22 @@
 <div class="row">
-    <div ng-repeat="file in files" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+    <div class="col-xs-12">
+        <div class="thumbnail" ng-repeat="file in files">
+            <div ng-if="file.type == 'image'">
+                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                <div id="kuvatitle" class="caption">
+                    <h3>{{ file.title }}</h3>
+                </div>
+            </div>
+            <div ng-if="file.type == 'audio'">
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+                </audio>
+            </div>
+            <div ng-if="file.type == 'video'">
+                <video controls  class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
+                </video>
+            </div>
+        </div>
     </div>
 </div>
