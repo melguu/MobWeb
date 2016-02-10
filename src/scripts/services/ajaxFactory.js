@@ -1,5 +1,5 @@
 angular.module('kuveij')
-    .factory('ajaxFactory', function ($http) {
+    .factory('ajaxFactory', function ($http, $httpParamSerializer) {
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
         var ajaxFunctions = {};
 

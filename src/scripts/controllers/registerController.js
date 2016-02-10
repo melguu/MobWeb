@@ -3,7 +3,7 @@ angular.module('kuveij')
 
         $scope.sendRegister = function () {
 
-            var dataToLogin = {
+            var dataToRegister = {
                 username: $scope.uname,
                 password: $scope.pword,
                 email: $scope.email
