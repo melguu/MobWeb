@@ -1,3 +1,16 @@
 <div class="row">
         <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+    <div ng-repeat="comment in comments" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+        <p>{{comment.username}}</p>
+        <p>{{comment.time}}</p>
+        <p>{{comment.comment}}</p>
+        </div>
+
+</div>
+<div class="row">
+    <form id="commentForm">
+        <input name="comment" type="text" placeholder="comment">
+        <button ng-click="sendComment()">Comment</button>
+    </form>
+    <p>{{commented}}</p>
 </div>

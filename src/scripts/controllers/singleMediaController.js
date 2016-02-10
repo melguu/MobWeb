@@ -9,4 +9,8 @@ angular.module('kuveij')
             $scope.file = data;
         });
 
+        ajaxFactory.loadComments(id).success(function (data){
+            $scope.comments = data;
+        });
+
     });

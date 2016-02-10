@@ -15,9 +15,9 @@ angular.module('kuveij')
             $scope.upload = "";
 
             request.then(function (response) {
-                return $scope.upload = "Media uploaded";
+                $scope.upload = "Media uploaded";
             }, function (error) {
-                return $scope.upload = "Media upload failed";
+                $scope.upload = "Media upload failed";
             });
         };
             var username = "6";

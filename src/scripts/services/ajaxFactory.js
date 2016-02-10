@@ -24,6 +24,18 @@ angular.module('kuveij')
                 });
         };
 
+        ajaxFunctions.loadComments = function(id){
+            return $http.get(urlBase + 'comments/file/' + id)
+                .success(function (data) {
+                    return data;
+                });
+        };
+
+        ajaxFunctions.postComment = function (id) {
+            return $http.post(urlBase + 'comment/file/' + id) {
+            };
+        };
+
         ajaxFunctions.uploadFile = function (args) {
             return $http.post(urlBase + 'upload', args, {
                 transformRequest: angular.identity,
