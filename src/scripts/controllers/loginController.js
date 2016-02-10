@@ -12,7 +12,6 @@ angular.module('kuveij')
             };
 
             ajaxFactory.login(dataToLogin).success(function (data) {
-                console.log(dataToLogin);
                 $scope.logged = data;
             });
         };
