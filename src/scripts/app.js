@@ -19,6 +19,6 @@ angular.module('kuveij', ['ngRoute'])
         // route for the about page
         .when('/image/:id', {
             templateUrl : 'views/oneImage.html',
-            controller  : 'mediaController'
+            controller  : 'singleMediaController'
         });
 });
