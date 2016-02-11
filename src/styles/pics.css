@@ -1,0 +1,22 @@
+.img {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.thumbnail {
+    width: 48%;
+    display: inline-block !important;
+    margin: 2px;
+}
+
+@media screen and (min-width: 700px) {
+    .thumbnail {
+        width: 31%;
+        display: inline-block !important;
+    }
+}
