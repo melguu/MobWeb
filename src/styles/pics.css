@@ -19,20 +19,4 @@
           width: 31%;
           display: inline-block !important;
       }
-      #kuvatitle {
-          font-size: small;
-          margin: 0px;
-          padding: 0px;    
-          font-style: bold;
-      }
-      #ylashow {
-          font-size: small;
-      }
-      #ylashow2 {
-          font-size: small;
-      }
-      
-      .nav.navbar-nav {
-          position: absolute !important;
-          
-      } 
+}
