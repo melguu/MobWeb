@@ -30,5 +30,10 @@ angular.module('kuveij', ['ngRoute'])
         .when('/login', {
             templateUrl : 'views/login.html',
             controller  : 'loginController'
+        })
+
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'registerController'
         });
 });
