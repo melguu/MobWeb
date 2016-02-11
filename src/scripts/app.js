@@ -21,12 +21,6 @@ angular.module('kuveij', ['ngRoute'])
             controller: 'singleMediaController'
         })
 
-        // route for the about page
-        .when('/image/:id', {
-            templateUrl : 'views/oneImage.html',
-            controller  : 'singleMediaController'
-        })
-
         .when('/login', {
             templateUrl : 'views/login.html',
             controller  : 'loginController'
