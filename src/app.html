@@ -14,56 +14,81 @@
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header pull-left">
-        <a class="navbar-brand" href="#">KUVEIJ</a>
+    <div class="navbar navbar-inverse nav-links navbar-fixed-top">
+        <div class="navbar-header pull-left col-xs-5">
+            <a class="navbar-brand" href="#">Kuveij</a>
+        </div>
+        <div class="navbar-header pull-right col-xs-7">
+            <div class="dropdown col-xs-5">
+                <a class="dropdown-toggle nav btn navbar-btn navbar-link" type="button" data-toggle="dropdown">Media
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#myImages">My Images</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li>
+                        <a href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">Register</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="dropdown col-xs-5">
+                <a class="dropdown-toggle nav btn navbar-btn navbar-link" type="button" data-toggle="dropdown">Sort By
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#myImages">My Images</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li>
+                        <a href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">Register</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
     </div>
-    
-    <div class="nav navbar-nav">
-       <a class="navbar-brand" id="ylashow" >Show</a>
-        <li class="dropdown">
-            <a class="dropdown-toggle" id="yladd" type="button" data-toggle="dropdown">All
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu dropdown-right">
-                <li><a href="#/">All</a></li>
-                <li><a href="#/">Video</a></li>
-                <li><a href="#myImages">Images</a></li>
-                <li><a href="#">Audio</a></li>
-            </ul>
-            </li>
-            <a class="navbar-brand" id="ylashow2">Sort by</a>
-                    <li class="dropdown">
-            <a class="dropdown-toggle" id="yladd" type="button" data-toggle="dropdown">Newest
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu dropdown-right">
-                <li><a href="#/">Newest</a></li>
-                <li><a href="#/">Hottest</a></li>
-                <li><a href="#myImages">Oldest</a></li>
-            </ul>
-            </li>
 
+    <div id="main" class="container">
+        <div ng-view></div>
     </div>
-</div>
 
-<div id="main" class="container">
-    <div ng-view></div>
-</div>
+    <div id="footer">
+        <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+            <div class="row" id="bottomNav">
+                <!--<div class="col-xs-1"></div>-->
+                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-user"></i></a></div>
+                <div class="col-xs-3 text-center"><a href="#" id="upload"><i class="glyphicon glyphicon-plus-sign"></i></a></div>
+                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-search"></i></a></div>
+                <div class="col-xs-2 text-center"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></div>
+                <!--<div class="col-xs-2 text-center"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></div>-->
+                <div class="col-xs-1"></div>
+            </div>
+        </div>
+    </div>
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- Include angular files & plugins -->
-<script src="../bower_components/angular/angular.js"></script>
-<script src="../bower_components/angular-route/angular-route.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<!-- Include My App's JS file(s)-->
-<script src="scripts/app.js"></script>
-<script src="scripts/services/ajaxFactory.js"></script>
-<script src="scripts/controllers/mediaController.js"></script>
-<script src="scripts/controllers/uploadController.js"></script>
+    <!-- Include angular files & plugins -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+
+    <!-- Include My App's JS file(s)-->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/ajaxFactory.js"></script>
+    <script src="scripts/controllers/mediaController.js"></script>
+    <script src="scripts/controllers/uploadController.js"></script>
 
 </body>
 
