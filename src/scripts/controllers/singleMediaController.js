@@ -14,7 +14,7 @@ angular.module('kuveij')
         });
 
         $scope.sendComment = function(){
-            var userID = "6";
+            var userID = "122";
 
             var dataToComment = {
                 user: userID,
