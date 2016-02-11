@@ -52,5 +52,16 @@ angular.module('kuveij')
             });
         };
 
+        ajaxFunctions.login = function (args) {
+            return $http.post(urlBase + 'login', $httpParamSerializer(args), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            })
+                .success(function (data) {
+                    return data.status;
+                });
+        };
+
         return ajaxFunctions;
     });

@@ -20,5 +20,10 @@ angular.module('kuveij', ['ngRoute'])
         .when('/image/:id', {
             templateUrl : 'views/oneImage.html',
             controller  : 'singleMediaController'
+        })
+
+        .when('/login', {
+            templateUrl : 'views/login.html',
+            controller  : 'loginController'
         });
 });
