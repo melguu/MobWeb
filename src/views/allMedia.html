@@ -1,7 +1,28 @@
 <div class="row">
-    <div ng-repeat="file in files" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <a ng-href="#/image/{{ file.fileId }}">
-        <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-        </a>
+    <div class="col-xs-12">
+        <div class="thumbnail" ng-repeat="file in files">
+            <div ng-if="file.type == 'image'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                <div id="kuvatitle" class="caption">
+                    {{ file.title }}
+                </div>
+                    </a>
+            </div>
+            <div ng-if="file.type == 'audio'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+                </audio>
+                    </a>
+            </div>
+            <div ng-if="file.type == 'video'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                <video controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
+                </video>
+                    </a>
+            </div>
+        </div>
     </div>
 </div>

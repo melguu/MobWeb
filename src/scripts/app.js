@@ -12,8 +12,13 @@ angular.module('kuveij', ['ngRoute'])
 
         // route for the about page
         .when('/myImages', {
-            templateUrl : 'views/myImages.html',
-            controller  : 'uploadController'
+            templateUrl: 'views/myImages.html',
+            controller: 'uploadController'
+        })
+
+        .when('/image/:id', {
+            templateUrl: 'views/oneImage.html',
+            controller: 'singleMediaController'
         })
 
         // route for the about page

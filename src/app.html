@@ -10,33 +10,68 @@
     <!-- Bootstrap -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/main.scss" rel="stylesheet">
+    <link href="styles/pics.css" rel="stylesheet">
 </head>
 
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header pull-left">
-        <a class="navbar-brand" href="#">Title Here</a>
-    </div>
-    <div class="navbar-header pull-right">
-        <div class="dropdown">
-            <a class="dropdown-toggle" type="button" data-toggle="dropdown">Dropdown
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#/">Home</a></li>
-                <li><a href="#myImages">My Images</a></li>
-                <li><a href="#">JavaScript</a></li>
-            </ul>
+    <div class="navbar navbar-inverse nav-links navbar-fixed-top">
+        <div class="navbar-header pull-left col-xs-5">
+            <a class="navbar-brand" href="#">Kuveij</a>
+        </div>
+        <div class="navbar-header pull-right col-xs-7">
+            <div class="dropdown col-xs-5">
+                <a class="dropdown-toggle nav btn navbar-btn navbar-link" type="button" data-toggle="dropdown">Media
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#myImages">My Images</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li>
+                        <a href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">Register</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xs-1"></div>
+            <div class="dropdown col-xs-5">
+                <a class="dropdown-toggle nav btn navbar-btn navbar-link" type="button" data-toggle="dropdown">Sort By
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#myImages">My Images</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li>
+                        <a href="#login">Login</a>
+                    </li>
+                    <li>
+                        <a href="#register">Register</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-xs-1"></div>
         </div>
     </div>
 </div>
 
-<div id="main" class="container">
-    <div ng-view></div>
-</div>
+    <div id="main" class="container">
+        <div ng-view></div>
+    </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+    <div id="footer">
+        <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+            <div class="row" id="bottomNav">
+                <!--<div class="col-xs-1"></div>-->
+                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-user"></i></a></div>
+                <div class="col-xs-3 text-center"><a href="#" id="upload"><i class="glyphicon glyphicon-plus-sign"></i></a></div>
+                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-search"></i></a></div>
+                <div class="col-xs-2 text-center"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></div>
+                <!--<div class="col-xs-2 text-center"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></div>-->
+                <div class="col-xs-1"></div>
+            </div>
+        </div>
     </div>
 </footer>
 
@@ -49,7 +84,16 @@
 <script src="../bower_components/angular/angular.js"></script>
 <script src="../bower_components/angular-route/angular-route.js"></script>
 
-<!-- Include My App's JS file(s)-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Include angular files & plugins -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+
+   <!-- Include My App's JS file(s)-->
 <script src="scripts/app.js"></script>
 <script src="scripts/services/ajaxFactory.js"></script>
 <script src="scripts/controllers/mediaController.js"></script>
