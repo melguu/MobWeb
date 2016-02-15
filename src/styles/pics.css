@@ -20,3 +20,15 @@
         display: inline-block !important;
     }
 }
+
+/*.oneImage {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+}*/

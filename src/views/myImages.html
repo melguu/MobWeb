@@ -1,15 +1,43 @@
-<div class="row">
-<form id="fileForm">
-    <input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)">
-    <input name="title" type="text" placeholder="title">
-    <input name="description" type="text" placeholder="description">
-    <button ng-click="sendImage()">Upload</button>
-</form>
-    <p>{{upload}}</p>
+<div class="container">
+    <div class="row" id="upload_myImage">
+        <div class="col-xs-5 col-xs-offset-3 text-center">
+            <form role="form" id="fileForm">
+                <input class="form-control" name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)">
+                <input class="form-control" name="title" type="text" placeholder="title">
+                <input class="form-control" name="description" type="text" placeholder="description">
+                <button class="btn btn-default" ng-click="sendImage()">Upload</button>
+            </form>
+            <p>{{upload}}</p>
+        </div>
+    </div>
 </div>
 
+
 <div class="row">
-    <div ng-repeat="file in files" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+       <div class="col-xs-12">
+        <div class="thumbnail" ng-repeat="file in files">
+            <div ng-if="file.type == 'image'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                <div id="kuvatitle" class="caption">
+                    {{ file.title }}
+                </div>
+                    </a>
+            </div>
+            <div ng-if="file.type == 'audio'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                <audio controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+                </audio>
+                    </a>
+            </div>
+            <div ng-if="file.type == 'video'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                <video controls class="img">
+                    <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
+                </video>
+                    </a>
+            </div>
+        </div>
     </div>
 </div>

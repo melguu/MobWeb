@@ -1,10 +1,31 @@
 <div class="row">
-        <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+    <div ng-if="file.type == 'image'">
+        <a ng-href="#/image/{{ file.fileId }}">
+            <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+            <div id="kuvatitle" class="caption">
+                {{ file.title }}
+            </div>
+        </a>
+    </div>
+    <div ng-if="file.type == 'audio'">
+        <a ng-href="#/image/{{ file.fileId }}">
+            <audio controls>
+                <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+            </audio>
+        </a>
+    </div>
+    <div ng-if="file.type == 'video'">
+        <a ng-href="#/image/{{ file.fileId }}">
+            <video controls>
+                <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
+            </video>
+        </a>
+    </div>
     <div ng-repeat="comment in comments" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
         <p>{{comment.username}}</p>
         <p>{{comment.time}}</p>
         <p>{{comment.comment}}</p>
-        </div>
+    </div>
 
 </div>
 <div class="row">
