@@ -1,5 +1,5 @@
 angular.module('kuveij')
-    .controller('mediaController', function ($scope, $sce, ajaxFactory) {
+    .controller('mediaController', function ($scope, $sce, ajaxFactory, MediaService) {
         ajaxFactory.loadAllMedia().success(function (data) {
             $scope.files = data;
 
@@ -25,5 +25,7 @@ angular.module('kuveij')
                 return Math.ceil($scope.total / $scope.itemsPerPage);
             };
         });
-
+        $scope.trustSrc = function (src) {
+            return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
+        };
     });

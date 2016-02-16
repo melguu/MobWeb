@@ -8,7 +8,7 @@ angular.module('kuveij')
         $scope.sendImage = function () {
             var fd = new FormData(document.getElementById('fileForm'));
             fd.append('user', 6);
-            fd.append('type', $scope.type);
+            fd.append('type', $scope.type);t
             fd.append('mime-type', $scope.mimeType);
 
             var request = ajaxFactory.uploadFile(fd);

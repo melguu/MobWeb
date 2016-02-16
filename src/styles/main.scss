@@ -60,5 +60,31 @@ body {
     display: inline-block;*/
     float: none;
 }
+#fileForm {
+text-align: center;
+ }
+
+audio {
+    width: 200px;
+    height: 220px;
+    padding: 4px;
+
+}
+video {
+    width: 200px;
+    height: 220px;
+    padding: 4px;
+    margin: auto;
+
+}
+@media screen and (min-width: 700px) {
+    #oneImage {
+        width: 100%;
+        display: inline-block !important;
+        margin: auto;
+    }
+}
+
+    
 
 // your own css/scss ends

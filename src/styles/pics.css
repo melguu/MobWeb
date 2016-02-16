@@ -12,7 +12,6 @@
     width: 48%;
     display: inline-block !important;
     margin: 2px;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (min-width: 700px) {
@@ -21,25 +20,16 @@
         display: inline-block !important;
     }
 }
-      .img {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      height: 200px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 50% 50%;
-  }
-  
-  .thumbnail {
-      width: 48%;
-      display: inline-block !important;
-      margin: 2px;
-  }
-  
-  @media screen and (min-width: 700px) {
-      .thumbnail {
-          width: 31%;
-          display: inline-block !important;
-      }
+#comment_username {
+    color: grey;
+    font-weight: bold;
+}
+
+#kuvatitle {
+    color: #000;
+    font-weight: bold;
+
+}
+#commentForm {
+    padding-left: -15px !imporant;
 }
