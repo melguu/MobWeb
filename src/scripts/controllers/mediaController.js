@@ -25,6 +25,7 @@ angular.module('kuveij')
                 return Math.ceil($scope.total / $scope.itemsPerPage);
             };
         });
+
         $scope.trustSrc = function (src) {
             return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
         };
