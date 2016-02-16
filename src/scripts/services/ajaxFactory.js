@@ -32,12 +32,25 @@ angular.module('kuveij')
         };
 
         ajaxFunctions.postComment = function (id,args) {
-            console.log(args);
             return $http.post(urlBase + 'comment/file/' + id , $httpParamSerializer(args), {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 }
             })
+                .success(function (data) {
+                    return data.status;
+                });
+        };
+
+        ajaxFunctions.postLike = function (user,fileId) {
+            return $http.get(urlBase + 'like/' + fileId + "/" + user)
+                .success(function (data) {
+                    return data.status;
+                });
+        };
+
+        ajaxFunctions.removeLike = function (user,fileId) {
+            return $http.get(urlBase + 'unlike/' + fileId + "/" + user)
                 .success(function (data) {
                     return data.status;
                 });

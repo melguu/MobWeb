@@ -4,6 +4,7 @@
 angular.module('kuveij')
     .controller('singleMediaController', function ($scope, ajaxFactory, $routeParams) {
         var id = $routeParams.id;
+        var userID = "122";
 
         ajaxFactory.loadOneMedia(id).success(function (data) {
             $scope.file = data;
@@ -13,8 +14,24 @@ angular.module('kuveij')
             $scope.comments = data;
         });
 
+        $scope.addLike = function(){
+
+            ajaxFactory.postLike(userID,id).success(function (data){
+                $scope.liked = data;
+                console.log(data);
+            });
+        };
+
+        $scope.removeLike = function(){
+
+            ajaxFactory.removeLike(userID,id).success(function (data){
+                $scope.liked = data;
+                console.log(data);
+            });
+        };
+
         $scope.sendComment = function(){
-            var userID = "122";
+
 
             var dataToComment = {
                 user: userID,
