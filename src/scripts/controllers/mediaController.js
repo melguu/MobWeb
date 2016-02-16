@@ -4,7 +4,7 @@ angular.module('kuveij')
             $scope.files = data;
 
 
-            $scope.itemsPerPage = 9;
+            $scope.itemsPerPage = 12;
             $scope.currentPage = 0;
             $scope.total = $scope.files.length;
             $scope.pagedFiles = $scope.files.slice($scope.currentPage * $scope.itemsPerPage,
