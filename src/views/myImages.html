@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" ng-controller="uploadController">
     <div class="row" id="upload_myImage">
         <div class="col-xs-5 col-xs-offset-3 text-center">
             <form role="form" id="fileForm">
@@ -13,7 +13,7 @@
 </div>
 
 
-<div class="row">
+<div class="row" ng-controller="mediaController">
        <div class="col-xs-12">
         <div class="thumbnail" ng-repeat="file in files">
             <div ng-if="file.type == 'image'">

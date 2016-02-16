@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" ng-controller="mediaController" id="oneImage">
     <div ng-if="file.type == 'image'">
         <a ng-href="#/image/{{ file.fileId }}">
             <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
@@ -21,17 +21,24 @@
             </video>
         </a>
     </div>
-    <div ng-repeat="comment in comments" class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-        <p>{{comment.username}}</p>
-        <p>{{comment.time}}</p>
-        <p>{{comment.comment}}</p>
-    </div>
+    <div ng-controller="singleMediaController">
+    <div  ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
 
-</div>
-<div class="row">
-    <form id="commentForm">
-        <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
-        <button ng-click="sendComment()">Comment</button>
-    </form>
-    <p>{{commented}}</p>
-</div>
+        <div class="col-xs-2" id="comment_date">
+            <p>{{comment.time}}</p>
+        </div>
+        <div class="pull-left col-xs-1" id="comment_username">
+            <p>{{comment.username}}</p>
+        </div>
+        <div class="col-xs-9" id="comment_comment">
+            <p>{{comment.comment}}</p>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <form id="commentForm">
+            <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
+            <button class="btn btn-default" ng-click="sendComment()">Comment</button>
+        </form>
+        <p>{{commented}}</p>
+    </div>
+    </div>

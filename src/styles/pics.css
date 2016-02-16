@@ -21,6 +21,20 @@
     }
 }
 
+
+#comment_username {
+    color: grey;
+    font-weight: bold;
+}
+
+#kuvatitle {
+    color: #000;
+    font-weight: bold;
+    
+}
+#commentForm {
+    padding-left: -15px !imporant;
+}
 /*.oneImage {
     display: block;
     position: relative;
