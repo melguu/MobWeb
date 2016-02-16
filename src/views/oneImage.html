@@ -8,9 +8,14 @@
 
 </div>
 <div class="row">
+    <i ng-click="addLike()" class="glyphicon glyphicon-arrow-up"></i>
+    <i ng-click="removeLike()" class="glyphicon glyphicon-arrow-down"></i>
+</div>
+<div class="row">
     <form id="commentForm">
         <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
         <button ng-click="sendComment()">Comment</button>
     </form>
     <p>{{commented}}</p>
+    <p>{{liked}}</p>
 </div>
