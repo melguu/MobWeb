@@ -18,7 +18,6 @@ angular.module('kuveij')
 
             ajaxFactory.postLike(userID,id).success(function (data){
                 $scope.liked = data;
-                console.log(data);
             });
         };
 
@@ -26,7 +25,6 @@ angular.module('kuveij')
 
             ajaxFactory.removeLike(userID,id).success(function (data){
                 $scope.liked = data;
-                console.log(data);
             });
         };
 
