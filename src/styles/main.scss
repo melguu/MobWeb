@@ -5,8 +5,8 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
-
 // your own css/scss
+
 /*.navbar-collapse.collapse {
 display: block!important;
 }
@@ -22,16 +22,18 @@ margin-right: -15px !important;
 .navbar-right {
 float: right!important;
 }*/
+
 html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  padding-top: 65px;
-  margin-bottom: 60px;
+    position: relative;
+    min-height: 100%;
 }
 
+body {
+    /* Margin bottom by footer height */
+    padding-top: 65px;
+    margin-bottom: 60px;
+    background-color: darkgrey;
+}
 
 #footer .col-xs-12.navbar-inverse.navbar-fixed-bottom {
     padding: 0.1em 0 0.5em 0;
