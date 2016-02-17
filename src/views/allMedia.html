@@ -12,20 +12,18 @@
             <div ng-if="file.type == 'audio'">
                 <a ng-href="#/image/{{ file.fileId }}">
                     <audio controls class="img">
-                        <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
-                    </audio>
+    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+</audio>
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }}
+                        {{ file.title }} <span class="glyphicon glyphicon-music" /</span>
                     </div>
                 </a>
             </div>
             <div ng-if="file.type == 'video'">
                 <a ng-href="#/image/{{ file.fileId }}">
-                    <video controls class="img">
-                        <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
-                    </video>
+            <video class="img" ng-src="{{trustSrc(file.path)}}" controls></video>
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }}
+                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video" </span>
                     </div>
                 </a>
             </div>

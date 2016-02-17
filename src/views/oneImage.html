@@ -1,30 +1,31 @@
 <div class="row" ng-controller="mediaController" id="oneImage">
     <div ng-if="file.type == 'image'">
+        <div id="kuvatitle" class="caption">
+            {{ file.title }}
+        </div>
         <a ng-href="#/image/{{ file.fileId }}">
             <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-            <div id="kuvatitle" class="caption">
-                {{ file.title }}
-            </div>
+
         </a>
     </div>
     <div ng-if="file.type == 'audio'">
+        <div id="kuvatitle" class="caption">
+            {{ file.title }} <span class="glyphicon glyphicon-music" </span>
+        </div>
         <a ng-href="#/image/{{ file.fileId }}">
-            <audio controls>
+            <audio audioplayer controls>
                 <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
             </audio>
-            <div id="kuvatitle" class="caption">
-                {{ file.title }}
-            </div>
+
         </a>
     </div>
     <div ng-if="file.type == 'video'">
+        <div id="kuvatitle" class="caption">
+            {{ file.title }} <span class="glyphicon glyphicon-facetime-video" </span>
+        </div>
         <a ng-href="#/image/{{ file.fileId }}">
-            <video controls>
-                <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
-            </video>
-            <div id="kuvatitle" class="caption">
-                <p>ji</p>
-            </div>
+            <video ng-src="{{trustSrc(file.path)}}" controls></video>
+
         </a>
     </div>
     <div ng-controller="singleMediaController">
@@ -40,10 +41,12 @@
                 <p>{{comment.comment}}</p>
             </div>
         </div>
-        <div class="col-xs-6">
+        <div class="form-inline">
             <form id="commentForm">
-                <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
-                <button class="btn btn-default" ng-click="sendComment()">Comment</button>
+                <input class="form-control" type="text" placeholder="Comment.." ng-model="comment_add">
+                <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+   </span>
             </form>
             <p>{{commented}}</p>
             <p>{{liked}}</p>
