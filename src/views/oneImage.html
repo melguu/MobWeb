@@ -12,6 +12,9 @@
             <audio controls>
                 <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
             </audio>
+            <div id="kuvatitle" class="caption">
+                {{ file.title }}
+            </div>
         </a>
     </div>
     <div ng-if="file.type == 'video'">
@@ -19,29 +22,32 @@
             <video controls>
                 <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
             </video>
+            <div id="kuvatitle" class="caption">
+                <p>ji</p>
+            </div>
         </a>
     </div>
     <div ng-controller="singleMediaController">
-    <div  ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
+        <div ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
 
-        <div class="col-xs-2" id="comment_date">
-            <p>{{comment.time}}</p>
+            <div class="col-xs-2" id="comment_date">
+                <p>{{comment.time}}</p>
+            </div>
+            <div class="pull-left col-xs-1" id="comment_username">
+                <p>{{comment.username}}</p>
+            </div>
+            <div class="col-xs-9" id="comment_comment">
+                <p>{{comment.comment}}</p>
+            </div>
         </div>
-        <div class="pull-left col-xs-1" id="comment_username">
-            <p>{{comment.username}}</p>
+        <div class="col-xs-6">
+            <form id="commentForm">
+                <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
+                <button class="btn btn-default" ng-click="sendComment()">Comment</button>
+            </form>
+            <p>{{commented}}</p>
+            <p>{{liked}}</p>
         </div>
-        <div class="col-xs-9" id="comment_comment">
-            <p>{{comment.comment}}</p>
-        </div>
-    </div>
-    <div class="col-xs-6">
-        <form id="commentForm">
-            <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
-            <button class="btn btn-default" ng-click="sendComment()">Comment</button>
-        </form>
-        <p>{{commented}}</p>
-        <p>{{liked}}</p>
-    </div>
     </div>
 </div>
 <div class="row">
