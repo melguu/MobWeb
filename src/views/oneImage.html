@@ -31,22 +31,20 @@
     <div ng-controller="singleMediaController">
         <div ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
 
-            <div class="col-xs-2" id="comment_date">
-                <p>{{comment.time}}</p>
+            <div class="col-xs-3" id="comment_date">
+                <p>{{comment.time | date:'short'}}</p>
             </div>
-            <div class="pull-left col-xs-1" id="comment_username">
+            <div class="pull-left col-xs-2" id="comment_username">
                 <p>{{comment.username}}</p>
             </div>
-            <div class="col-xs-9" id="comment_comment">
+            <div class="col-xs-7" id="comment_comment">
                 <p>{{comment.comment}}</p>
             </div>
         </div>
-        <div class="form-inline">
+        <div class="col-xs-6">
             <form id="commentForm">
-                <input class="form-control" type="text" placeholder="Comment.." ng-model="comment_add">
-                <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-   </span>
+                <input name="comment" type="text" placeholder="comment" ng-model="comment_add">
+                <button class="btn btn-default" ng-click="sendComment()">Comment</button>
             </form>
             <p>{{commented}}</p>
             <p>{{liked}}</p>

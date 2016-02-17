@@ -8,7 +8,8 @@ angular.module('kuveij')
         mediaVariables.setVariable = function(key, value){
             mediaVariables[key] = value;
             $rootScope.$broadcast('mediaevent', 'Variables updated');
-        };    
+        }; 
+        
      
     
         return mediaVariables;
