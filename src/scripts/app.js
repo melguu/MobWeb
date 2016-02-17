@@ -1,19 +1,19 @@
 /**
  * Created by Artsi on 28/01/16.
  */
-angular.module('kuveij', ['ngRoute'])
-    .config(function($routeProvider) {
-    $routeProvider
+angular.module('kuveij', ['ngRoute', 'ngTouch'])
+    .config(function ($routeProvider) {
+        $routeProvider
         // route for the home page
-        .when('/', {
-            templateUrl : 'views/allMedia.html',
-            controller  : 'mediaController'
+            .when('/', {
+            templateUrl: 'views/allMedia.html',
+            controller: 'mediaController'
         })
 
         // route for the about page
         .when('/myImages', {
             templateUrl: 'views/myImages.html',
-            controller: 'uploadController' 
+            controller: 'uploadController'
         })
 
         .when('/image/:id', {
@@ -22,12 +22,12 @@ angular.module('kuveij', ['ngRoute'])
         })
 
         .when('/login', {
-            templateUrl : 'views/login.html',
-            controller  : 'loginController'
+            templateUrl: 'views/login.html',
+            controller: 'loginController'
         })
 
         .when('/register', {
             templateUrl: 'views/register.html',
             controller: 'registerController'
         });
-});
+    });

@@ -5,8 +5,8 @@ $icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
 // bower:scss
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
-
 // your own css/scss
+
 /*.navbar-collapse.collapse {
 display: block!important;
 }
@@ -22,16 +22,19 @@ margin-right: -15px !important;
 .navbar-right {
 float: right!important;
 }*/
+
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
+
 body {
     /* Margin bottom by footer height */
     padding-top: 65px;
     margin-bottom: 60px;
     background-color: darkgrey;
 }
+
 #footer .col-xs-12.navbar-inverse.navbar-fixed-bottom {
     padding: 0.1em 0em 0.5em 0em;
     margin-bottom: -5px;
@@ -59,23 +62,24 @@ body {
     display: inline-block;*/
     float: none;
 }
+
 #fileForm {
-text-align: center;
- }
+    text-align: center;
+}
 
 audio {
     width: 200px;
     height: 220px;
     padding: 4px;
-
 }
+
 video {
     width: 200px;
     height: 220px;
     padding: 4px;
     margin: auto;
-
 }
+
 @media screen and (min-width: 700px) {
     #oneImage {
         width: 100%;
@@ -84,6 +88,10 @@ video {
     }
 }
 
-    
+#loadMore {
+    text-align: center;
+    margin: 1em;
+}
 
-// your own css/scss ends    
+
+// your own css/scss ends

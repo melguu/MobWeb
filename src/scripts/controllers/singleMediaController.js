@@ -10,25 +10,25 @@ angular.module('kuveij')
             $scope.file = data;
         });
 
-        ajaxFactory.loadComments(id).success(function (data){
+        ajaxFactory.loadComments(id).success(function (data) {
             $scope.comments = data;
         });
 
-        $scope.addLike = function(){
+        $scope.addLike = function () {
 
-            ajaxFactory.postLike(userID,id).success(function (data){
+            ajaxFactory.postLike(userID, id).success(function (data) {
                 $scope.liked = data;
             });
         };
 
-        $scope.removeLike = function(){
+        $scope.removeLike = function () {
 
-            ajaxFactory.removeLike(userID,id).success(function (data){
+            ajaxFactory.removeLike(userID, id).success(function (data) {
                 $scope.liked = data;
             });
         };
 
-        $scope.sendComment = function(){
+        $scope.sendComment = function () {
 
 
             var dataToComment = {
@@ -36,8 +36,21 @@ angular.module('kuveij')
                 comment: $scope.comment_add
             };
 
-            ajaxFactory.postComment(id,dataToComment).success(function (data) {
+            ajaxFactory.postComment(id, dataToComment).success(function (data) {
                 $scope.commented = data;
+            });
+        };
+        $scope.nextMedia = function () {
+            id = id + 1;
+            ajaxFactory.loadOneMedia(id).success(function (data) {
+                $scope.file = data;
+            });
+        };
+
+        $scope.previousMedia = function () {
+            id = id - 1;
+            ajaxFactory.loadOneMedia(id).success(function (data) {
+                $scope.file = data;
             });
         };
 

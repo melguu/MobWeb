@@ -20,16 +20,21 @@
         display: inline-block !important;
     }
 }
+
 #comment_username {
     color: grey;
     font-weight: bold;
 }
 
 #kuvatitle {
-    color: #000;
+    color: #FFF;
     font-weight: bold;
-
 }
+
 #commentForm {
     padding-left: -15px !important;
+}
+
+.row .col-xs-12 .thumbnail {
+    background-color: rgba(0, 0, 0, 0.4);
 }
