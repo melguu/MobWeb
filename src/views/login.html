@@ -1,6 +1,16 @@
-<form id="loginForm" enctype="application/x-www-form-urlencoded">
-<input name="username" type="text" placeholder="username" ng-model="uname">
-<input name="password" type="password" placeholder="password" ng-model="pword">
-<button ng-click="sendLogin()">Login</button>
-</form>
-<p>{{logged}}</p>
+ <button ng-click="toggleModal()" class="btn btn-default">Open modal</button>
+
+    <loginmodal title="Login form" visible="showModal">
+        <form enctype="application/x-www-form-urlencoded">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" ng-model="uname" class="form-control" id="username" placeholder="Enter username" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" ng-model="pword" class="form-control" id="password" placeholder="Enter password" />
+            </div>
+            <button ng-click="sendLogin()" class="btn btn-default">Login</button>
+            <button type="submit" class="btn btn-default">Register</button>
+        </form>
+    </loginmodal>

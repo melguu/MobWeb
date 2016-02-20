@@ -2,7 +2,12 @@
  * Created by Artsi on 04/02/16.
  */
 angular.module('kuveij')
-    .controller('loginController', function ($scope, ajaxFactory) {
+    .controller('loginController', function ($scope, loginFactory) {
+
+        $scope.showModal = false;
+        $scope.toggleModal = function(){
+            $scope.showModal = !$scope.showModal;
+        };
 
         $scope.sendLogin = function(){
 
@@ -10,8 +15,10 @@ angular.module('kuveij')
                 username: $scope.uname,
                 password: $scope.pword
             };
+            console.log(dataToLogin);
 
-            ajaxFactory.login(dataToLogin).success(function (data) {
+           loginFactory.login(dataToLogin).success(function (data) {
+                console.log(data);
                 $scope.logged = data;
             });
         };
