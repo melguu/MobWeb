@@ -10,6 +10,6 @@ angular.module('kuveij')
 
         $scope.login = function (){
             loginFactory.login($scope.credentials);
-        }
+        };
 
     });

@@ -4,7 +4,7 @@
 angular.module('kuveij')
     .controller('mainController', function ($scope, $rootScope, AUTH_EVENTS, loginFactory) {
 
-        $scope.currentUser;
+        $scope.currentUser = undefined;
 
         $scope.setCurrentUser = function (user) {
             $scope.currentUser = user;

@@ -3,7 +3,7 @@ angular.module('kuveij')
 
         if(!loginFactory.isAuthenticated()){
             $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
-        };
+        }
 
         $scope.setMediaFile = function (element) {
             $scope.mimeType = element.files[0].type;
