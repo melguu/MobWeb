@@ -3,29 +3,35 @@
         <div class="thumbnail" ng-repeat="file in pagedFiles">
             <div ng-if="file.type == 'image'">
                 <a ng-href="#/image/{{ file.fileId }}">
-                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
-                <div id="kuvatitle" class="caption">
-                    {{ file.title }}
-                </div>
-                    </a>
+                    <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                    <div id="kuvatitle" class="caption">
+                        {{ file.title }}
+                    </div>
+                </a>
             </div>
             <div ng-if="file.type == 'audio'">
                 <a ng-href="#/image/{{ file.fileId }}">
-                <audio controls class="img">
-                    <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
-                </audio>
-                    </a>
+                    <div class="img">
+                        <div id="audioglyph">
+                            <div class="glyphicon glyphicon-music">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="kuvatitle" class="caption">
+                        {{ file.title }} <span class="glyphicon glyphicon-music" /</span>
+                    </div>
+                </a>
             </div>
             <div ng-if="file.type == 'video'">
                 <a ng-href="#/image/{{ file.fileId }}">
-                <video controls class="img">
-                    <source ng-src="{{trustSrc(file.path)}}" type="video/mp4">
-                </video>
-                    </a>
+                    <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn160_{{ file.path }}.png);"></div>
+                    <div id="kuvatitle" class="caption">
+                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video" </span>
+                    </div>
+                </a>
             </div>
         </div>
         <br>
-        <button class="btn" href="#" ng-class="nextPageDisabledClass()"
-                ng-click="loadMore()">Load More</button>
+        <button class="btn" href="#" ng-class="nextPageDisabledClass()" ng-click="loadMore()">Load More</button>
     </div>
 </div>

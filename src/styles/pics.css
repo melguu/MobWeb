@@ -20,6 +20,7 @@
         display: inline-block !important;
     }
 }
+
 #comment_username {
     color: grey;
     font-weight: bold;
@@ -28,8 +29,44 @@
 #kuvatitle {
     color: #000;
     font-weight: bold;
-
 }
+
 #commentForm {
     padding-left: -15px !important;
+}
+
+#oneImage {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+audio {
+    width: 100%;
+    height: 220px;
+    padding: 4px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    margin: auto;
+}
+
+#audioglyph {
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 600px) {
+    #oneImage {
+        width: 100%;
+        display: inline-block !important;
+        margin: auto;
+    }
 }
