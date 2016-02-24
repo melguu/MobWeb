@@ -1,32 +1,33 @@
 angular.module('kuveij')
-    .controller('mediaController', function ($scope, $sce, ajaxFactory, MediaService) {
-        ajaxFactory.loadAllMedia().success(function (data) {
-            $scope.files = data;
+    .controller('mediaController', ['$scope', '$sce', 'ajaxFactory', 'MediaService',
+        function ($scope, $sce, ajaxFactory, MediaService) {
+            ajaxFactory.loadAllMedia().success(function (data) {
+                $scope.files = data;
 
 
-            $scope.itemsPerPage = 12;
-            $scope.currentPage = 0;
-            $scope.total = $scope.files.length;
-            $scope.pagedFiles = $scope.files.slice($scope.currentPage * $scope.itemsPerPage,
-                $scope.currentPage * $scope.itemsPerPage + $scope.itemsPerPage);
-
-            $scope.loadMore = function () {
-                $scope.currentPage++;
-                var newItems = $scope.files.slice($scope.currentPage * $scope.itemsPerPage,
+                $scope.itemsPerPage = 12;
+                $scope.currentPage = 0;
+                $scope.total = $scope.files.length;
+                $scope.pagedFiles = $scope.files.slice($scope.currentPage * $scope.itemsPerPage,
                     $scope.currentPage * $scope.itemsPerPage + $scope.itemsPerPage);
-                $scope.pagedFiles = $scope.pagedFiles.concat(newItems);
-            };
 
-            $scope.nextPageDisabledClass = function () {
-                return $scope.currentPage === $scope.pageCount() - 1 ? "disabled" : "";
-            };
+                $scope.loadMore = function () {
+                    $scope.currentPage++;
+                    var newItems = $scope.files.slice($scope.currentPage * $scope.itemsPerPage,
+                        $scope.currentPage * $scope.itemsPerPage + $scope.itemsPerPage);
+                    $scope.pagedFiles = $scope.pagedFiles.concat(newItems);
+                };
 
-            $scope.pageCount = function () {
-                return Math.ceil($scope.total / $scope.itemsPerPage);
-            };
-        });
+                $scope.nextPageDisabledClass = function () {
+                    return $scope.currentPage === $scope.pageCount() - 1 ? "disabled" : "";
+                };
 
-        $scope.trustSrc = function (src) {
-            return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
-        };
-    });
+                $scope.pageCount = function () {
+                    return Math.ceil($scope.total / $scope.itemsPerPage);
+                };
+            });
+
+            $scope.trustSrc = function (src) {
+                return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
+            };
+        }]);

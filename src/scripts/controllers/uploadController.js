@@ -1,32 +1,33 @@
 angular.module('kuveij')
-    .controller('uploadController', function ($scope, ajaxFactory, loginFactory, AUTH_EVENTS, $rootScope) {
+    .controller('uploadController', ['$scope', 'ajaxFactory', 'loginFactory', 'AUTH_EVENTS', '$rootScope',
+        function ($scope, ajaxFactory, loginFactory, AUTH_EVENTS, $rootScope) {
 
-        if(!loginFactory.isAuthenticated()){
-            $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
-        }
+            if (!loginFactory.isAuthenticated()) {
+                $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+            }
 
-        $scope.setMediaFile = function (element) {
-            $scope.mimeType = element.files[0].type;
-            $scope.type = $scope.mimeType.substr(0,5);
-        };
+            $scope.setMediaFile = function (element) {
+                $scope.mimeType = element.files[0].type;
+                $scope.type = $scope.mimeType.substr(0, 5);
+            };
 
-        $scope.sendImage = function () {
-            var fd = new FormData(document.getElementById('fileForm'));
-            fd.append('user', 6);
-            fd.append('type', $scope.type);
-            fd.append('mime-type', $scope.mimeType);
+            $scope.sendImage = function () {
+                var fd = new FormData(document.getElementById('fileForm'));
+                fd.append('user', 6);
+                fd.append('type', $scope.type);
+                fd.append('mime-type', $scope.mimeType);
 
-            var request = ajaxFactory.uploadFile(fd);
-            $scope.upload = "";
+                var request = ajaxFactory.uploadFile(fd);
+                $scope.upload = "";
 
-            request.then(function (response) {
-                $scope.upload = "Media uploaded";
-            }, function (error) {
-                $scope.upload = "Media upload failed";
-            });
-        };
+                request.then(function (response) {
+                    $scope.upload = "Media uploaded";
+                }, function (error) {
+                    $scope.upload = "Media upload failed";
+                });
+            };
             var username = "6";
-        ajaxFactory.loadUserMedia(username).success(function (data) {
-            $scope.files = data;
-        });
-    });
+            ajaxFactory.loadUserMedia(username).success(function (data) {
+                $scope.files = data;
+            });
+        }]);

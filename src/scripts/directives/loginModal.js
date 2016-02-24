@@ -7,11 +7,11 @@ angular.module('kuveij')
             restrict: 'A',
             template: '<div ng-if="visible" ng-include="\'views/login.html\'">',
             link: function (scope) {
-                var showDialog = function () {
+                var showDialog = function (){
                     scope.visible = true;
                 };
 
-                var hideDialog = function(){
+                var hideDialog = function (){
                     scope.visible = false;
                 };
 

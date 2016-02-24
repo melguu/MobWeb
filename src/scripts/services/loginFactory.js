@@ -16,8 +16,15 @@ angular.module('kuveij')
                     }
                 })
                 .then(function (response) {
-                    userId = response.data.userId;
-                    authService.getUsername(userId);
+                    if (response.status == "200"){
+                        console.log(response.data);
+                        userId = response.data.userId;
+                        authService.getUsername(userId);
+                    }else{
+                        $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+                        console.log("wrong password or username");
+                    }
+
                 }, function (response){
                     $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
                     console.log("wrong password or username");
@@ -34,11 +41,10 @@ angular.module('kuveij')
         };
 
         authService.isAuthenticated = function () {
-            return typeof userId != "undefined";
+            return typeof userId !== "undefined";
         };
 
         authService.username = function (){
-            console.log(username);
             return username;
         };
 
