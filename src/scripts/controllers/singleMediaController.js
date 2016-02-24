@@ -2,9 +2,9 @@
  * Created by Artsi on 10/02/16.
  */
 angular.module('kuveij')
-    .controller('singleMediaController', function ($scope, ajaxFactory, $routeParams) {
+    .controller('singleMediaController', function ($scope, ajaxFactory, $routeParams, SessionService) {
         var id = $routeParams.id;
-        var userID = "122";
+        var userID = SessionService.id;
 
         ajaxFactory.loadOneMedia(id).success(function (data) {
             $scope.file = data;

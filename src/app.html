@@ -13,7 +13,7 @@
     <link href="styles/pics.css" rel="stylesheet">
 </head>
 
-<body>
+<body ng-controller="mainController">
 
     <div class="navbar navbar-inverse nav-links navbar-fixed-top">
         <div class="navbar-header pull-left col-xs-5">
@@ -46,6 +46,7 @@
                         <a href="#login">Oldest</a>
                     </li>
                 </ul>
+                <div ng-if="currentUser">Welcome, {{ currentUser }}</div>
 
             </div>
             <div class="col-xs-1"></div>
@@ -86,10 +87,13 @@
 <script src="scripts/services/ajaxFactory.js"></script>
     <script src="scripts/services/loginFactory.js"></script>
     <script src="scripts/services/mediaService.js"></script>
+    <script src="scripts/controllers/mainController.js"></script>
 <script src="scripts/controllers/mediaController.js"></script>
 <script src="scripts/controllers/uploadController.js"></script>
 <script src="scripts/controllers/singleMediaController.js"></script>
 <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/services/SessionService.js"></script>
+    <script src="scripts/services/AUTH_EVENTS.js"></script>
     <script src="scripts/controllers/registerController.js"></script>
     <script src="scripts/directives/loginModal.js"></script>
 

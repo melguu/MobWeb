@@ -2,30 +2,34 @@
  * Created by Artsi on 20/02/16.
  */
 angular.module('kuveij')
-    .factory('loginFactory', function ($http, $httpParamSerializer) {
+    .factory('loginFactory', function ($http, $httpParamSerializer, SessionService) {
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
-        var loginFunctions = {};
-        var loggedIn = "";
+        var authService = {};
 
-        loginFunctions.isLoggedIn = function () {
-            if (loggedIn !== ""){
-                loginFunctions.login(args);
-            }else{
-                return loggedIn;
-            }
-                };
+        authService.login = function (credentials) {
+            return $http
+                .post(urlBase + 'login', $httpParamSerializer(credentials), {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(function (data) {
+                    return data.data.userId;
+                });
 
-        loginFunctions.login = function (args) {
-            return $http.post(urlBase + 'login', $httpParamSerializer(args), {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }
-            })
+        };
+
+        authService.getUsername = function (userId){
+            return $http.get(urlBase + 'user/' + userId)
                 .success(function (data) {
-                    console.log(args);
-                    return data.status;
+                    SessionService.create(userId, data.username);
+                    return data.username;
                 });
         };
 
-        return loginFunctions;
+        authService.isAuthenticated = function () {
+            return !!SessionService.userId;
+        };
+
+        return authService;
     });
