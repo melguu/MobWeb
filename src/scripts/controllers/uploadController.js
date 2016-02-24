@@ -26,8 +26,8 @@ angular.module('kuveij')
                     $scope.upload = "Media upload failed";
                 });
             };
-            var username = "6";
-            ajaxFactory.loadUserMedia(username).success(function (data) {
+
+            ajaxFactory.loadUserMedia(loginFactory.userId()).success(function (data) {
                 $scope.files = data;
             });
         }]);
