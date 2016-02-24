@@ -2,33 +2,48 @@
  * Created by Artsi on 20/02/16.
  */
 angular.module('kuveij')
-    .factory('loginFactory', function ($http, $httpParamSerializer, SessionService) {
+    .factory('loginFactory', function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS) {
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
         var authService = {};
+        var username;
+        var userId;
 
         authService.login = function (credentials) {
-            return $http
+            $http
                 .post(urlBase + 'login', $httpParamSerializer(credentials), {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
                 })
-                .then(function (data) {
-                    return data.data.userId;
+                .then(function (response) {
+                    userId = response.data.userId;
+                    authService.getUsername(userId);
+                }, function (response){
+                    $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
+                    console.log("wrong password or username");
                 });
 
         };
 
         authService.getUsername = function (userId){
-            return $http.get(urlBase + 'user/' + userId)
-                .success(function (data) {
-                    SessionService.create(userId, data.username);
-                    return data.username;
+            $http.get(urlBase + 'user/' + userId)
+                .success(function (response) {
+                    username = response.username;
+                    $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
                 });
         };
 
         authService.isAuthenticated = function () {
-            return !!SessionService.userId;
+            return typeof userId != "undefined";
+        };
+
+        authService.username = function (){
+            console.log(username);
+            return username;
+        };
+
+        authService.userId = function (){
+            return userId;
         };
 
         return authService;

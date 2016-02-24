@@ -2,9 +2,8 @@
  * Created by Artsi on 10/02/16.
  */
 angular.module('kuveij')
-    .controller('singleMediaController', function ($scope, ajaxFactory, $routeParams, SessionService) {
+    .controller('singleMediaController', function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS) {
         var id = $routeParams.id;
-        var userID = SessionService.id;
 
         ajaxFactory.loadOneMedia(id).success(function (data) {
             $scope.file = data;
@@ -15,10 +14,13 @@ angular.module('kuveij')
         });
 
         $scope.addLike = function(){
-
-            ajaxFactory.postLike(userID,id).success(function (data){
-                $scope.liked = data;
-            });
+            if(loginFactory.isAuthenticated()){
+                ajaxFactory.postLike(loginFactory.userId(),id).success(function (data){
+                    $scope.liked = data;
+                });
+            }else{
+                $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+            }
         };
 
         $scope.removeLike = function(){

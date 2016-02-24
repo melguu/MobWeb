@@ -1,3 +1,4 @@
+<div login-dialog></div>
 <div class="row" ng-controller="mediaController" id="oneImage">
     <div ng-if="file.type == 'image'">
         <a ng-href="#/image/{{ file.fileId }}">
@@ -22,7 +23,7 @@
         </a>
     </div>
     <div ng-controller="singleMediaController">
-    <div  ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
+    <div ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
 
         <div class="col-xs-2" id="comment_date">
             <p>{{comment.time}}</p>

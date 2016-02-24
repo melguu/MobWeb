@@ -1,5 +1,10 @@
 angular.module('kuveij')
-    .controller('uploadController', function ($scope, ajaxFactory) {
+    .controller('uploadController', function ($scope, ajaxFactory, loginFactory, AUTH_EVENTS, $rootScope) {
+
+        if(!loginFactory.isAuthenticated()){
+            $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+        };
+
         $scope.setMediaFile = function (element) {
             $scope.mimeType = element.files[0].type;
             $scope.type = $scope.mimeType.substr(0,5);
