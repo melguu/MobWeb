@@ -1,37 +1,32 @@
 <div login-dialog></div>
-<div class="row" ng-controller="mediaController" id="oneImage">
+<div class="row" id="oneImage">
     <div ng-if="file.type == 'image'">
         <div id="kuvatitle" class="caption">
             {{ file.title }}
         </div>
-        <a ng-href="#/image/{{ file.fileId }}">
-            <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
 
-        </a>
+        <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+
     </div>
     <div ng-if="file.type == 'audio'">
         <div id="kuvatitle" class="caption">
-            {{ file.title }} <span class="glyphicon glyphicon-music" </span>
+            {{ file.title }} <span class="glyphicon glyphicon-music"> </span>
         </div>
-        <a ng-href="#/image/{{ file.fileId }}">
-            <audio audioplayer controls>
-                <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
-            </audio>
+        <audio audioplayer controls>
+            <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
+        </audio>
 
-        </a>
     </div>
     <div ng-if="file.type == 'video'">
         <div id="kuvatitle" class="caption">
-            {{ file.title }} <span class="glyphicon glyphicon-facetime-video" </span>
+            {{ file.title }} <span class="glyphicon glyphicon-facetime-video"> </span>
         </div>
-        <a ng-href="#/image/{{ file.fileId }}">
-            <video ng-src="{{trustSrc(file.path)}}" controls></video>
+        <video ng-src="{{trustSrc(file.path)}}" controls></video>
 
-        </a>
     </div>
-    <div ng-controller="singleMediaController">
+    <div>
 
-    <div ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
+        <div ng-repeat="comment in comments" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
 
             <div class="col-xs-3" id="comment_date">
                 <p>{{comment.time | date:'short'}}</p>
@@ -49,6 +44,7 @@
                 <button class="btn btn-default" ng-click="sendComment()">Comment</button>
             </form>
             <p>{{commented}}</p>
+
             <p>{{liked}}</p>
         </div>
     </div>

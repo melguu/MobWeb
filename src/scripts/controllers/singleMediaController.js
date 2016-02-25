@@ -2,8 +2,8 @@
  * Created by Artsi on 10/02/16.
  */
 angular.module('kuveij')
-    .controller('singleMediaController', ['$scope', 'ajaxFactory', '$routeParams', 'loginFactory', '$rootScope', 'AUTH_EVENTS',
-        function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS) {
+    .controller('singleMediaController', ['$scope', 'ajaxFactory', '$routeParams', 'loginFactory', '$rootScope', 'AUTH_EVENTS', '$sce', 'MediaService',
+        function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
             var id = $routeParams.id;
 
             ajaxFactory.loadOneMedia(id).success(function (data) {
@@ -48,6 +48,10 @@ angular.module('kuveij')
                 } else {
                     $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
                 }
+            };
+
+            $scope.trustSrc = function (src) {
+                return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
             };
 
         }]);
