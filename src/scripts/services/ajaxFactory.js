@@ -18,6 +18,13 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.loadSpecifiedMedia = function (name) {
+                return $http.get(urlBase + 'files/type/' + name)
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
             ajaxFunctions.loadUserMedia = function (username) {
                 return $http.get(urlBase + 'files/user/' + username)
                     .success(function (data) {
@@ -64,17 +71,6 @@ angular.module('kuveij')
                         'Content-Type': undefined
                     }
                 });
-            };
-
-            ajaxFunctions.login = function (args) {
-                return $http.post(urlBase + 'login', $httpParamSerializer(args), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
-                    .success(function (data) {
-                        return data.status;
-                    });
             };
 
             ajaxFunctions.register = function (args) {
