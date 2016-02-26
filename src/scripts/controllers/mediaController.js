@@ -3,11 +3,10 @@ angular.module('kuveij')
         function ($scope, $sce, ajaxFactory, MediaService) {
             $scope.fileType = undefined;
 
-            function changeFileType(type){
-                console.log(type);
+            $scope.changeFileType = function(type){
                 $scope.fileType = type;
-                return $scope.fileType;
-            }
+            };
+            console.log($scope.fileType);
 
             if($scope.fileType === undefined){
                 ajaxFactory.loadAllMedia().success(function (response) {
