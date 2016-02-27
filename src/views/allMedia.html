@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <div class="thumbnail" ng-repeat="file in pagedFiles">
+        <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
             <div ng-if="file.type == 'image'">
                 <a ng-href="#/image/{{ file.fileId }}">
                     <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
@@ -32,6 +32,6 @@
             </div>
         </div>
         <br>
-        <button class="btn" href="#" ng-class="nextPageDisabledClass()" ng-click="loadMore()">Load More</button>
+        <button class="btn" href="#" ng-click="perPage = perPage + 12">Load More</button>
     </div>
 </div>
