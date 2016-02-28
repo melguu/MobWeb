@@ -2,7 +2,8 @@
  * Created by Artsi on 20/02/16.
  */
 angular.module('kuveij')
-    .factory('loginFactory', function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS) {
+    .factory('loginFactory', ['$http', '$httpParamSerializer', '$rootScope', 'AUTH_EVENTS',
+        function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS) {
         var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
         var authService = {};
         var username;
@@ -55,4 +56,4 @@ angular.module('kuveij')
         };
 
         return authService;
-    });
+    }]);
