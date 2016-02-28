@@ -21,14 +21,17 @@ angular.module('kuveij')
                         authService.getUsername(userId);
                     }else{
                         $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-                        console.log("wrong password or username");
                     }
 
                 }, function (response){
                     $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-                    console.log("wrong password or username");
                 });
 
+        };
+
+        authService.logout = function (){
+            $rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
+            username = undefined;
         };
 
         authService.getUsername = function (userId){

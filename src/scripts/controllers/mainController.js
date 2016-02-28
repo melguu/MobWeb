@@ -15,4 +15,8 @@ angular.module('kuveij')
                 $scope.setCurrentUser(loginFactory.username());
             });
 
+            $rootScope.$on(AUTH_EVENTS.logoutSuccess, function () {
+                $scope.setCurrentUser(loginFactory.username());
+            });
+
         }]);
