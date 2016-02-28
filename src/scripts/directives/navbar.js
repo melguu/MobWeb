@@ -6,6 +6,6 @@ angular.module('kuveij')
         return {
             restrict: 'E',
             templateUrl: 'views/navbar.html',
-            controller: 'mediaController'
+            controller: ''
         };
     });

@@ -6,33 +6,9 @@
     </div>
     <div class="navbar-header pull-right col-xs-7">
         <div class="col-xs-0 col-sm-4"></div>
-        <div class="dropdown col-xs-5 col-sm-3">
-            <a class="dropdown-toggle nav btn navbar-btn navbar-link" type="button" data-toggle="dropdown">Media
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#/">All</a></li>
-                <li><a href="" ng-click="changeFileType('image')">Images</a></li>
-                <li>
-                    <a href="#login">Audio</a>
-                </li>
-                <li>
-                    <a href="#register">Video</a>
-                </li>
-            </ul>
-        </div>
         <div class="col-xs-1"></div>
         <div class="dropdown col-xs-5 col-sm-3">
-            <a class="dropdown-toggle nav btn navbar-btn navbar-link" type="button" data-toggle="dropdown">Sort By
-                <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#/">Newest</a></li>
-                <li><a href="#myImages">Hottest</a></li>
-                <li>
-                    <a href="#login">Oldest</a>
-                </li>
-            </ul>
             <div ng-if="currentUser">Welcome, {{ currentUser }}</div>
-
         </div>
         <div class="col-xs-1"></div>
     </div>

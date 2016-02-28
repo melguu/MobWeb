@@ -1,7 +1,11 @@
 <div class="row">
+    <button ng-click="changeFileType()">All</button>
+    <button ng-click="changeFileType('image')">Images</button>
+    <button ng-click="changeFileType('audio')">Audio</button>
+    <button ng-click="changeFileType('video')">Video</button>
     <div class="col-xs-12">
-        <div class="thumbnail" ng-repeat="file in files | limitTo:perPage track by file.fileId">
-            <div ng-if="file.type == 'image'">
+        <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
+            <div ng-if="file.type == 'image' || type == 'image'">
                 <a ng-href="#/image/{{ file.fileId }}">
                     <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
                     <div id="kuvatitle" class="caption">
@@ -9,7 +13,7 @@
                     </div>
                 </a>
             </div>
-            <div ng-if="file.type == 'audio'">
+            <div ng-if="file.type == 'audio' || type == 'audio'">
                 <a ng-href="#/image/{{ file.fileId }}">
                     <div class="img">
                         <div id="audioglyph">
@@ -18,15 +22,15 @@
                         </div>
                     </div>
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }} <span class="glyphicon glyphicon-music" /</span>
+                        {{ file.title }} <span class="glyphicon glyphicon-music"> /</span>
                     </div>
                 </a>
             </div>
-            <div ng-if="file.type == 'video'">
+            <div ng-if="file.type == 'video' || type == 'video'">
                 <a ng-href="#/image/{{ file.fileId }}">
                     <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn160_{{ file.path }}.png);"></div>
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video" </span>
+                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video"> </span>
                     </div>
                 </a>
             </div>

@@ -10,8 +10,8 @@ angular.module('kuveij')
                     });
                 } else {
                     ajaxFactory.loadSpecifiedMedia(type).success(function (response){
-                        console.log(response);
                         $scope.files = response;
+                        $scope.type = type;
                     });
                 }
             };
