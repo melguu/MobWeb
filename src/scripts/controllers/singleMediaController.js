@@ -41,6 +41,9 @@ angular.module('kuveij')
                         comment: $scope.comment_add
                     };
                     ajaxFactory.postComment(id, dataToComment).success(function (data) {
+                        ajaxFactory.loadComments(id).success(function (data) {
+                            $scope.comments = data;
+                        });
                         $scope.commented = data;
                     });
                 } else {

@@ -18,6 +18,13 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.loadFavorites = function (username) {
+                return $http.get(urlBase + 'likes/user/' + username)
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
             ajaxFunctions.loadSpecifiedMedia = function (name) {
                 return $http.get(urlBase + 'files/type/' + name)
                     .success(function (data) {
