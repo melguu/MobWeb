@@ -2,10 +2,10 @@
  * Created by Artsi on 21/02/16.
  */
 angular.module('kuveij')
-    .controller('mainController', ['$scope', '$rootScope', 'AUTH_EVENTS', 'loginFactory',
-        function ($scope, $rootScope, AUTH_EVENTS, loginFactory) {
+    .controller('mainController', ['$scope', '$rootScope', 'AUTH_EVENTS', 'loginFactory', 'localStorageService',
+        function ($scope, $rootScope, AUTH_EVENTS, loginFactory, localStorageService) {
 
-            $scope.currentUser = undefined;
+            $scope.currentUser = loginFactory.getUsername(localStorageService.get("userId"));
 
             $scope.setCurrentUser = function (user) {
                 $scope.currentUser = user;

@@ -2,8 +2,8 @@
  * Created by Artsi on 20/02/16.
  */
 angular.module('kuveij')
-    .factory('loginFactory', ['$http', '$httpParamSerializer', '$rootScope', 'AUTH_EVENTS', 'SessionStorage',
-        function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS, sessionStorage) {
+    .factory('loginFactory', ['$http', '$httpParamSerializer', '$rootScope', 'AUTH_EVENTS', 'localStorageService',
+        function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS, localStorageService) {
             var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
             var authService = {};
             var username;
@@ -19,7 +19,7 @@ angular.module('kuveij')
                 .then(function (response) {
                     if (response.status == "200"){
                         userId = response.data.userId;
-                        sessionStorage.set('userId',userId);
+                        localStorageService.set("userId", userId);
                         authService.getUsername(userId);
                     }else{
                         $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
@@ -46,7 +46,12 @@ angular.module('kuveij')
         };
 
         authService.isAuthenticated = function () {
-            return typeof userId !== "undefined";
+            if(localStorageService.get("userId") !== null){
+                userId = localStorageService.get("userId");
+                return true;
+            }else{
+                return false;
+            }
         };
 
         authService.username = function (){
