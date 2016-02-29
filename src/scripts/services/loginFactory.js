@@ -32,8 +32,8 @@ angular.module('kuveij')
         };
 
         authService.logout = function (){
-            $rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
             username = undefined;
+            $rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
             localStorageService.clearAll();
         };
 

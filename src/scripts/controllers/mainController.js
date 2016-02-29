@@ -19,4 +19,9 @@ angular.module('kuveij')
                 $scope.setCurrentUser(loginFactory.username());
             });
 
+            $scope.logOut = function (){
+                loginFactory.logout();
+                $scope.currentUser = undefined;
+            };
+
         }]);

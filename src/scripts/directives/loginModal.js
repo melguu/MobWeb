@@ -18,7 +18,7 @@ angular.module('kuveij')
                 scope.visible = false;
                 scope.$on(AUTH_EVENTS.loginSuccess, hideDialog);
                 scope.$on(AUTH_EVENTS.notAuthenticated, showDialog);
-                scope.$on(AUTH_EVENTS.sessionTimeout, showDialog);
+                scope.$on(AUTH_EVENTS.logoutSuccess, showDialog);
             }
         };
     });
