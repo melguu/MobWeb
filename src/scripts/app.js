@@ -1,17 +1,10 @@
 /**
  * Created by Artsi on 28/01/16.
  */
-angular.module('kuveij', ['ngRoute', 'LocalStorageModule'])
+angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch'])
     .config(function ($routeProvider) {
 
-
         $routeProvider
-            // route for the home page
-            .when('/', {
-                templateUrl: 'views/allMedia.html',
-                controller: 'mediaController'
-            })
-
             // route for the about page
             .when('/myImages', {
                 templateUrl: 'views/myImages.html',

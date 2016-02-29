@@ -65,10 +65,27 @@ body {
 
 #fileForm {
     text-align: center;
+<<<<<<< HEAD
 }
 
 
+=======
 }
+
+audio {
+    width: 200px;
+    height: 220px;
+    padding: 4px;
+}
+
+video {
+    width: 200px;
+    height: 220px;
+    padding: 4px;
+    margin: auto;
+>>>>>>> imageIterate
+}
+
 @media screen and (min-width: 700px) {
     #oneImage {
         width: 100%;
@@ -76,7 +93,17 @@ body {
         margin: auto;
     }
 }
+<<<<<<< HEAD
 #kuveij_header {
     color: #42B8DF;
 }
+=======
+
+#loadMore {
+    text-align: center;
+    margin: 1em;
+}
+
+
+>>>>>>> imageIterate
 // your own css/scss ends

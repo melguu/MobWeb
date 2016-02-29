@@ -1,5 +1,6 @@
 <div login-dialog></div>
-<div class="row" id="oneImage">
+<div class="row" ng-controller="mediaController" ng-swipe-left="previousMedia()" ng-swipe-right="nextMedia()" id="oneImage">
+
     <div ng-if="file.type == 'image'">
         <div id="kuvatitle" class="caption">
             {{ file.title }}
@@ -44,7 +45,6 @@
                 <button class="btn btn-default" ng-click="sendComment()">Comment</button>
             </form>
             <p>{{commented}}</p>
-
             <p>{{liked}}</p>
         </div>
     </div>
@@ -52,4 +52,8 @@
 <div class="row">
     <i ng-click="addLike()" class="glyphicon glyphicon-arrow-up"></i>
     <i ng-click="removeLike()" class="glyphicon glyphicon-arrow-down"></i>
+</div>
+<div class="row">
+    <button class="btn" ng-click="nextMedia()">Newer</button>
+    <button class="btn" ng-click="previousMedia()">Older</button>
 </div>
