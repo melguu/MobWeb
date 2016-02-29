@@ -2,12 +2,12 @@
  * Created by Artsi on 20/02/16.
  */
 angular.module('kuveij')
-    .factory('loginFactory', ['$http', '$httpParamSerializer', '$rootScope', 'AUTH_EVENTS',
-        function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS) {
-        var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
-        var authService = {};
-        var username;
-        var userId;
+    .factory('loginFactory', ['$http', '$httpParamSerializer', '$rootScope', 'AUTH_EVENTS', 'SessionStorage',
+        function ($http, $httpParamSerializer, $rootScope, AUTH_EVENTS, sessionStorage) {
+            var urlBase = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
+            var authService = {};
+            var username;
+            var userId;
 
         authService.login = function (credentials) {
             $http
@@ -19,6 +19,7 @@ angular.module('kuveij')
                 .then(function (response) {
                     if (response.status == "200"){
                         userId = response.data.userId;
+                        sessionStorage.set('userId',userId);
                         authService.getUsername(userId);
                     }else{
                         $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
@@ -33,6 +34,7 @@ angular.module('kuveij')
         authService.logout = function (){
             $rootScope.$broadcast(AUTH_EVENTS.logoutSuccess);
             username = undefined;
+            localStorageService.clearAll();
         };
 
         authService.getUsername = function (userId){
