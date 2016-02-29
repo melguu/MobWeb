@@ -40,7 +40,6 @@ angular.module('kuveij')
                         user: loginFactory.userId(),
                         comment: $scope.comment_add
                     };
-
                     ajaxFactory.postComment(id, dataToComment).success(function (data) {
                         $scope.commented = data;
                     });
