@@ -11,7 +11,6 @@ angular.module('kuveij')
                 };
 
                 ajaxFactory.register(dataToRegister).success(function (data) {
-                    console.log(dataToRegister);
                     $scope.registered = data;
                 });
             };

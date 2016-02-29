@@ -16,10 +16,10 @@ angular.module('kuveij')
                 }
             };
 
-
             $scope.trustSrc = function (src) {
                 return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
             };
 
             $scope.changeFileType();
+
         }]);

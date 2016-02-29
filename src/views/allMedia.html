@@ -8,7 +8,7 @@
             <div ng-if="file.type == 'image' || type == 'image'">
                 <a ng-href="#/image/{{ file.fileId }}">
                     <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
-                    <div id="kuvatitle" class="caption">
+                    <div class="caption kuvatitle">
                         {{ file.title }}
                     </div>
                 </a>
@@ -21,8 +21,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="kuvatitle" class="caption">
-                        {{ file.title }} <span class="glyphicon glyphicon-music"> /</span>
+                    <div class="caption kuvatitle">
+                        {{ file.title }} <span class="glyphicon glyphicon-music"></span>
                     </div>
                 </a>
             </div>
@@ -30,8 +30,8 @@
                 <a ng-href="#/image/{{ file.fileId }}">
 
                     <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn160_{{ file.path }}.png);"></div>
-                    <div id="kuvatitle" class="caption">
-                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video"> </span>
+                    <div class="caption kuvatitle">
+                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video"></span>
                     </div>
                 </a>
             </div>

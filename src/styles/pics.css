@@ -26,7 +26,7 @@
     font-weight: bold;
 }
 
-#kuvatitle {
+.kuvatitle {
     color: #FFF;
     font-weight: bold;
 }
@@ -35,7 +35,6 @@
     padding-left: -15px !important;
 }
 
-<<<<<<< HEAD
 #oneImage {
     width: 100%;
     height: 100%;
@@ -70,8 +69,7 @@ video {
         display: inline-block !important;
         margin: auto;
     }
-=======
+
 .row .col-xs-12 .thumbnail {
     background-color: rgba(0, 0, 0, 0.4);
->>>>>>> imageIterate
-}
+}}

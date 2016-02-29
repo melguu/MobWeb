@@ -6,6 +6,10 @@ angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch'])
 
         $routeProvider
             // route for the about page
+            .when('/', {
+                templateUrl: 'views/allMedia.html',
+                controller: 'mediaController'
+            })
             .when('/myImages', {
                 templateUrl: 'views/myImages.html',
                 controller: 'uploadController'
