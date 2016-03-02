@@ -30,6 +30,11 @@ angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch'])
                 controller: 'registerController'
             })
 
+            .when('/statistics', {
+                templateUrl: 'views/stats.html',
+                controller: 'statsController'
+            })
+
             .otherwise({
                 redirectTo: '/'
             });

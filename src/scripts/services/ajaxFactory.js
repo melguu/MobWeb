@@ -91,5 +91,26 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.countUsers = function () {
+                return $http.get(urlBase + 'users/')
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
+            ajaxFunctions.countImages = function () {
+                return $http.get(urlBase + 'files/')
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
+            ajaxFunctions.loadAllComments = function () {
+                return $http.get(urlBase + 'comments/')
+                    .success(function (data) {
+                        return data.fileId;
+                    });
+            };
+
             return ajaxFunctions;
         }]);
