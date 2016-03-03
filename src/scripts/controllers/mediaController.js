@@ -25,4 +25,10 @@ angular.module('kuveij')
 
             $scope.changeFileType();
 
+            $scope.search = function (searchTitle) {
+                ajaxFactory.loadSearchResults(searchTitle).success(function (response) {
+                    $scope.files = response;
+                });
+            };
+
         }]);
