@@ -6,8 +6,13 @@ angular.module('kuveij')
         function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
             var id = $routeParams.id;
 
+
             ajaxFactory.loadOneMedia(id).success(function (data) {
                 $scope.file = data;
+                ajaxFactory.getUsername(data.userId).success(function (data) {
+                    $scope.uploadedBy = data.username;
+                });
+
             });
 
             ajaxFactory.loadComments(id).success(function (data) {

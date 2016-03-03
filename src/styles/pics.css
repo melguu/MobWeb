@@ -6,6 +6,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+    padding-bottom: 10px;
 }
 
 .thumbnail {
@@ -14,21 +15,24 @@
     margin: 2px;
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 600px) {
     .thumbnail {
         width: 31%;
         display: inline-block !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }
 
 #comment_username {
-    color: grey;
+    color: royalblue;
     font-weight: bold;
 }
 
-.kuvatitle {
-    color: #FFF;
+#header {
+    color: #000;
     font-weight: bold;
+    margin: auto;
 }
 
 #commentForm {
@@ -38,7 +42,7 @@
 #oneImage {
     width: 100%;
     height: 100%;
-    margin: auto;
+    margin-bottom: 60px;
 }
 
 audio {
@@ -63,13 +67,82 @@ video {
     height: 100%;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 700px) {
     #oneImage {
         width: 100%;
         display: inline-block !important;
         margin: auto;
     }
+}
 
-.row .col-xs-12 .thumbnail {
-    background-color: rgba(0, 0, 0, 0.4);
-}}
+#kuva {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#commentStyle {
+    margin-top: 5px;
+    text-align: left;
+    align-items: left;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
+
+#next_older {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-bottom: 20px;
+}
+
+#mediabuttons {
+    margin: auto;
+    padding-left: 36px;
+    padding-top: 10px;
+}
+
+#kuveij_header {
+    padding-bottom: 10px;
+}
+
+#logOutbar {
+    padding: 15px;
+    color: aquamarine;
+}
+
+#kuvacontainer {
+    padding-left: 35px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#loggeduser {
+    padding-top: 28px;
+}
+
+@media screen and (max-width: 600px) {
+    #kuvacontainer {
+        width: 100%;
+        display: inline-block !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+
+#commentdate {
+    margin-right: -15px !important;
+    text-align: left;
+    color: #ccc;
+}
+
+#comment_comment {
+    text-align: left;
+    color: #ccc;
+}
+
+#kommenttikentta {
+    padding-top: 10px;
+}

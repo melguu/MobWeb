@@ -4,12 +4,11 @@
         <a id="kuveij_header" class="navbar-brand" href="#/">Kuveij</a>
 
     </div>
-    <div class="navbar-header pull-right col-xs-7">
-        <div class="col-xs-0 col-sm-4"></div>
-        <div class="col-xs-1"></div>
-        <div class="dropdown col-xs-5 col-sm-3">
-            <div ng-if="currentUser">Welcome, {{ currentUser }} <button ng-click="logOut()">Logout</button></div>
-        </div>
-        <div class="col-xs-1"></div>
+    <div id="logOutbar" class="navbar-header pull-right col-xs-7">
+        <span style="color: #ccc" id="loggeduser" g-if="currentUser">Welcome, {{ currentUser }}</span>
+        <button class="btn btn-primary pull-right" ng-click="logOut()">Logout</button>
+
     </div>
+    <div class="col-xs-1"></div>
+</div>
 </div>

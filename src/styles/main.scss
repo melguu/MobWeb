@@ -32,7 +32,7 @@ body {
     /* Margin bottom by footer height */
     padding-top: 65px;
     margin-bottom: 60px;
-    background-color: darkgrey;
+    background-color: dimgrey;
 }
 
 #footer .col-xs-12.navbar-inverse.navbar-fixed-bottom {
@@ -96,4 +96,9 @@ video {
     text-align: center;
     margin: 1em;
 }
+
+.navbar-brand {
+    line-height: 20px !important;
+}
+
 // your own css/scss ends
