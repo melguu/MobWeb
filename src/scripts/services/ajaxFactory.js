@@ -79,6 +79,12 @@ angular.module('kuveij')
                     }
                 });
             };
+            ajaxFunctions.loadSearchResults = function (searchTitle) {
+                return $http.get(urlBase + 'files/search/' + searchTitle)
+                    .success(function (data) {
+                        return data;
+                    });
+            };
 
             ajaxFunctions.register = function (args) {
                 return $http.post(urlBase + 'register', $httpParamSerializer(args), {

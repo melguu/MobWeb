@@ -1,7 +1,7 @@
 <div login-dialog></div>
 <div class="row" ng-swipe-left="previousMedia()" ng-swipe-right="nextMedia()" id="oneImage">
 
-    <h3 id="header"> {{ file.title}} </h3> by: <span style="color:royalblue">{{uploadedBy}}</span>
+    <h3 id="header"> {{ file.title}} </h3> by: <span style="color:#ccc">{{uploadedBy}}</span>
 
     <div id="kuva" ng-if="file.type == 'image'">
         <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
