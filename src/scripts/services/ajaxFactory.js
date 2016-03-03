@@ -25,6 +25,13 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.loadRandomMedia = function () {
+                return $http.get(urlBase + 'file/random')
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
             ajaxFunctions.loadUserMedia = function (username) {
                 return $http.get(urlBase + 'files/user/' + username)
                     .success(function (data) {
@@ -41,10 +48,10 @@ angular.module('kuveij')
 
             ajaxFunctions.postComment = function (id, args) {
                 return $http.post(urlBase + 'comment/file/' + id, $httpParamSerializer(args), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
                     .success(function (data) {
                         return data.status;
                     });
@@ -75,10 +82,10 @@ angular.module('kuveij')
 
             ajaxFunctions.register = function (args) {
                 return $http.post(urlBase + 'register', $httpParamSerializer(args), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
                     .success(function (data) {
                         return data.status;
                     });

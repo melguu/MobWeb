@@ -2,16 +2,15 @@
  * Created by Artsi on 10/02/16.
  */
 angular.module('kuveij')
-    .controller('singleMediaController', ['$scope', 'ajaxFactory', '$routeParams', 'loginFactory', '$rootScope', 'AUTH_EVENTS', '$sce', 'MediaService',
-        function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
+    .controller('singleMediaController', ['$scope', 'ajaxFactory', '$routeParams', 'loginFactory', '$rootScope', 'AUTH_EVENTS', '$sce', 'MediaService', '$window',
+        function ($scope, ajaxFactory, $routeParams, $window, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
             var id = $routeParams.id;
 
             ajaxFactory.loadOneMedia(id).success(function (data) {
                 $scope.file = data;
-            });
-
-            ajaxFactory.loadComments(id).success(function (data) {
-                $scope.comments = data;
+                ajaxFactory.loadComments(id).success(function (data) {
+                    $scope.comments = data;
+                });
             });
 
             $scope.addLike = function () {
@@ -48,22 +47,25 @@ angular.module('kuveij')
                 }
             };
 
-            $scope.trustSrc = function (src) {
+            $scope.trustSource = function (src) {
                 return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
             };
 
             $scope.nextMedia = function () {
-                id = id + 1;
-                ajaxFactory.loadOneMedia(id).success(function (data) {
-                    $scope.file = data;
-                });
+                var nextFile = id - (-1);
+                window.location.assign('/src/app.html#/image/' + nextFile);
             };
 
             $scope.previousMedia = function () {
-                id = id - 1;
-                ajaxFactory.loadOneMedia(id).success(function (data) {
+                var prevFile = id - 1;
+                window.location.assign('/src/app.html#/image/' + prevFile);
+            };
+
+            $scope.randomMedia = function () {
+                ajaxFactory.loadRandomMedia().success(function (data) {
                     $scope.file = data;
+                    window.location.assign('/src/app.html#/image/' + data.fileId);
                 });
             };
 
-        }]);
+    }]);
