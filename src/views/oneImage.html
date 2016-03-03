@@ -14,7 +14,7 @@
             {{ file.title }} <span class="glyphicon glyphicon-music"> </span>
         </div>
         <audio audioplayer controls>
-            <source ng-src="{{combinedPath}}" type="audio/mp4">
+            <source ng-src="{{trustSrc(file.path)}}" type="audio/mp4">
         </audio>
 
     </div>
@@ -22,7 +22,7 @@
         <div id="kuvatitle" class="caption">
             {{ file.title }} <span class="glyphicon glyphicon-facetime-video"> </span>
         </div>
-        <video ng-src="{{combinedPath}}" controls></video>
+        <video ng-src="{{trustSrc(file.path)}}" controls></video>
 
     </div>
     <div>
