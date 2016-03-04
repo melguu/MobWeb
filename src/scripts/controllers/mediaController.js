@@ -2,6 +2,7 @@ angular.module('kuveij')
     .controller('mediaController', ['$scope', '$sce', 'ajaxFactory', 'MediaService',
         function ($scope, $sce, ajaxFactory, MediaService) {
             $scope.perPage = 12;
+            $scope.keywords = undefined;
 
 
             $scope.changeFileType = function (type) {
@@ -17,15 +18,9 @@ angular.module('kuveij')
                 }
             };
 
-
-
             $scope.trustSrc = function (src) {
                 return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
             };
-
-            $scope.changeFileType();
-
-
 
             $scope.search = function () {
                 var searchTitle = {
@@ -38,5 +33,7 @@ angular.module('kuveij')
 
                 });
             };
+
+            $scope.changeFileType();
 
         }]);

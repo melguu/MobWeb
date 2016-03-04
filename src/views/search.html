@@ -1,12 +1,11 @@
-<div ng-controller="mediaController">
-    <form enctype="application/x-www-form-urlencoded" novalidate>
+ <form enctype="application/x-www-form-urlencoded" novalidate>
         <div class="form-group">
             <label for="search">Search</label>
             <input type="text" ng-model="keywords" class="form-control" id="search" placeholder="Search title..." />
         </div>
         <button ng-click="search()" class="btn btn-default">Search</button>
     </form>
-    <div ng-show="currentUser" class="row">
+    <div class="row">
         <div class="col-xs-12" id="kuvacontainer">
             <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
                 <div ng-if="file.type == 'image' || type == 'image'">
