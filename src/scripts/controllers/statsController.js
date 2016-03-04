@@ -45,7 +45,7 @@ angular.module('kuveij')
                 var countPerType = {all: 0, video: 0, audio: 0, image: 0};
                 for (var i = 0; i < response.length; i++) {
                     countPerType[response[i].type] += 1;
-                    countPerType['all'] += 1;
+                    countPerType.all += 1;
                 }
 
                 var typeCounts = countPerType;
