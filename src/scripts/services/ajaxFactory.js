@@ -117,5 +117,12 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.countUsers = function () {
+                return $http.get(urlBase + 'users/')
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
             return ajaxFunctions;
         }]);

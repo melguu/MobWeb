@@ -5,8 +5,8 @@
 
     </div>
     <div id="logOutbar" class="navbar-header pull-right col-xs-7">
-        <span style="color: #ccc" id="loggeduser" g-if="currentUser">Welcome, {{ currentUser }}</span>
-        <button id="logoutButton"style="background-color:grey" class="btn btn-primary pull-right" ng-click="logOut()">Logout</button>
+        <span style="color: #ccc" id="loggeduser" ng-if="currentUser">Welcome, {{ currentUser }}</span>
+        <button ng-if="currentUser" id="logoutButton"style="background-color:grey" class="btn btn-primary pull-right" ng-click="logOut()">Logout</button>
 
     </div>
     <div class="col-xs-1"></div>
