@@ -98,12 +98,6 @@ angular.module('kuveij')
                     });
             };
 
-            ajaxFunctions.countImages = function () {
-                return $http.get(urlBase + 'files/')
-                    .success(function (data) {
-                        return data;
-                    });
-            };
 
             ajaxFunctions.loadAllComments = function () {
                 return $http.get(urlBase + 'comments/')

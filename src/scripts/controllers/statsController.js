@@ -19,19 +19,13 @@ angular.module('kuveij')
                     }
                 }
 
-                var arr = Object.keys(IdCountMap).map(function (value, key) {
-                    return IdCountMap[key], IdCountMap[value];
+                var arr = Object.keys(IdCountMap).map(function (key) {
+                    return IdCountMap[key];
                 });
 
-                for (var key in IdCountMap) {
-                    if (IdCountMap.hasOwnProperty(key)) {
-                        console.log(IdCountMap[key]);
-                    }
-                }
+                Math.max.apply(null, arr);
 
-                console.log(Math.max.apply(null, arr));
-
-                $scope.MostCommented = IdCountMap;
+                $scope.MostCommented = Math.max.apply(null, arr);
             });
 
             ajaxFactory.loadAllComments().success(function (data) {
@@ -40,10 +34,6 @@ angular.module('kuveij')
 
             ajaxFactory.loadAllComments().success(function (data) {
                 $scope.comments = data.length;
-            });
-
-            ajaxFactory.countImages().success(function (data) {
-                $scope.imageCount = data.length;
             });
 
             ajaxFactory.countUsers().success(function (data) {
@@ -51,23 +41,19 @@ angular.module('kuveij')
             });
 
 
-            $scope.countAllItems = function () {
-                var allFileTypes = {};
-                ajaxFactory.loadAllMedia().success(function (response) {
-                    for (var i = 0; i < response.length; i++)
-                        if (allFileTypes[response[i].type]) {
-                            allFileTypes[response[i].type] += 1;
-                        }
+            ajaxFactory.loadAllMedia().success(function (response) {
+                var countPerType = {all: 0, video: 0, audio: 0, image: 0};
+                for (var i = 0; i < response.length; i++) {
+                    countPerType[response[i].type] += 1;
+                    countPerType['all'] += 1;
+                }
 
-                    console.log(allFileTypes);
-                });
-            };
+                var typeCounts = countPerType;
+                var counts = [typeCounts.image, typeCounts.video, typeCounts.audio];
 
-            var data1 = ["12", "11", "100"];
+                $scope.imageCount = typeCounts.all;
 
-            $scope.countAllItems();
-
-            $scope.labels = ["Images", "Videos", "Audio"];
-            $scope.data = data1;
-
+                $scope.labels = ["Images", "Videos", "Audio"];
+                $scope.data = counts;
+            });
         }]);

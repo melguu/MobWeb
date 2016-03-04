@@ -25,7 +25,7 @@ angular.module('kuveij')
                         $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
                     }
 
-                }, function (response){
+                }, function (){
                     $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
                 });
 
