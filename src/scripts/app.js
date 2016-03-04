@@ -1,7 +1,7 @@
 /**
  * Created by Artsi on 28/01/16.
  */
-angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch'])
+angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch', 'chart.js'])
     .config(function ($routeProvider) {
 
         $routeProvider
