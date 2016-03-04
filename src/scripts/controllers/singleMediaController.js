@@ -6,6 +6,8 @@ angular.module('kuveij')
         function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
             var id = $routeParams.id;
 
+            $scope.clicked = false;
+
 
             ajaxFactory.loadOneMedia(id).success(function (data) {
                 $scope.file = data;
@@ -23,6 +25,7 @@ angular.module('kuveij')
                 if (loginFactory.isAuthenticated()) {
                     ajaxFactory.postLike(loginFactory.userId(), id).success(function (data) {
                         $scope.liked = data;
+                        $scope.clicked = true;
                     });
                 } else {
                     $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
@@ -33,12 +36,31 @@ angular.module('kuveij')
                 if (loginFactory.isAuthenticated()) {
                     ajaxFactory.removeLike(loginFactory.userId(), id).success(function (data) {
                         $scope.liked = data;
+                        $scope.clicked = false;
                     });
                 } else {
                     $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
                 }
             };
 
+            $scope.checkLikes = function () {
+                if (!loginFactory.isAuthenticated()) {
+                    $scope.clicked = false;
+
+                } else {
+
+                    ajaxFactory.loadFavorites(loginFactory.userId()).success(function (data) {
+                        for (var i = 0; data.length; i++) {
+                            if (data[i].fileId == id) {
+                                $scope.clicked = true;
+                                break;
+                            } else {
+                                $scope.clicked = false;
+                            }
+                        }
+                    });
+                }
+            };
             $scope.sendComment = function () {
                 if (loginFactory.isAuthenticated()) {
                     var dataToComment = {
@@ -70,5 +92,8 @@ angular.module('kuveij')
                     $scope.file = data;
                 });
             };
+            $scope.checkLikes();
+
+
 
         }]);

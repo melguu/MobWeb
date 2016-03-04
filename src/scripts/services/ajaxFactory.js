@@ -80,7 +80,11 @@ angular.module('kuveij')
                 });
             };
             ajaxFunctions.loadSearchResults = function (searchTitle) {
-                return $http.get(urlBase + 'files/search/' + searchTitle)
+                return $http.post(urlBase + 'files/search/title', $httpParamSerializer(searchTitle), {
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
                     .success(function (data) {
                         return data;
                     });
@@ -94,6 +98,13 @@ angular.module('kuveij')
                     })
                     .success(function (data) {
                         return data.status;
+                    });
+            };
+
+            ajaxFunctions.loadFavorites = function (username) {
+                return $http.get(urlBase + 'likes/user/' + username)
+                    .success(function (data) {
+                        return data;
                     });
             };
 
