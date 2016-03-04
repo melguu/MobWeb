@@ -34,31 +34,32 @@
             <button class="btn pull-right" ng-click="nextMedia()">Newer</button>
         </div>
     </div>
+</div>
 
-    <div ng-repeat="comment in comments" class="row col-xs-12 col-sm-10 col-md-10 col-lg-10" id="commentStyle">
-        <div class="pull-left col-xs-3" id="comment_date">
-            <p style="color: #ccc"> {{comment.time | javaDate}}</p>
-        </div>
-        <div class="pull-left col-xs-3" id="comment_username">
-            <p>{{comment.username}}</p>
-        </div>
-        <div class="pull-left col-xs-6" id="comment_comment">
-            <p>{{comment.comment}}</p>
-        </div>
+<div ng-repeat="comment in comments" class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" id="commentStyle">
+    <div class="pull-left col-xs-3" id="comment_date">
+        <p style="color: #ccc"> {{comment.time | javaDate}}</p>
     </div>
-    <div id="kommenttikentta" class="col-xs-6">
-        <form class="form-inline" role="form">
-            <div class="form-group">
-                <input class="form-control" type="text" placeholder="Comments" ng-model="comment_add" />
-            </div>
-            <div class="form-group">
-                <button class="btn btn-default" ng-click="sendComment()">Add</button>
-            </div>
-        </form>
-        <p>{{commented}}</p>
-        <p>{{liked}}</p>
+    <div class="pull-left col-xs-3" id="comment_username">
+        <p>{{comment.username}}</p>
+    </div>
+    <div class="pull-left col-xs-6" id="comment_comment">
+        <p>{{comment.comment}}</p>
     </div>
 </div>
+<div id="kommenttikentta" class="col-xs-6">
+    <form class="form-inline" role="form">
+        <div class="form-group">
+            <input class="form-control" type="text" placeholder="Comments" ng-model="comment_add" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default" ng-click="sendComment()">Add</button>
+        </div>
+    </form>
+    <p>{{commented}}</p>
+    <p>{{liked}}</p>
+</div>
+
 </div>
 <!--div class="row">
     <i ng-click="addLike()" class="glyphicon glyphicon-heart"></i>
