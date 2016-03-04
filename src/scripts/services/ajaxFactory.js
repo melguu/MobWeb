@@ -11,6 +11,13 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.getUsername = function (userId) {
+                return $http.get(urlBase + 'user/' + userId)
+                    .success(function (response) {
+                        return response;
+                    });
+            };
+
             ajaxFunctions.loadOneMedia = function (id) {
                 return $http.get(urlBase + 'file/' + id)
                     .success(function (data) {
@@ -48,10 +55,10 @@ angular.module('kuveij')
 
             ajaxFunctions.postComment = function (id, args) {
                 return $http.post(urlBase + 'comment/file/' + id, $httpParamSerializer(args), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
                     .success(function (data) {
                         return data.status;
                     });
@@ -79,24 +86,28 @@ angular.module('kuveij')
                     }
                 });
             };
+            ajaxFunctions.loadSearchResults = function (searchTitle) {
+                return $http.post(urlBase + 'files/search/title', $httpParamSerializer(searchTitle), {
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
+                    .success(function (data) {
+                        return data;
+                    });
+            };
 
             ajaxFunctions.register = function (args) {
                 return $http.post(urlBase + 'register', $httpParamSerializer(args), {
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                })
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        }
+                    })
                     .success(function (data) {
                         return data.status;
                     });
             };
 
-            ajaxFunctions.countUsers = function () {
-                return $http.get(urlBase + 'users/')
-                    .success(function (data) {
-                        return data;
-                    });
-            };
 
 
             ajaxFunctions.loadAllComments = function () {
