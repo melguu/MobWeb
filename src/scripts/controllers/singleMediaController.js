@@ -2,15 +2,16 @@
  * Created by Artsi on 10/02/16.
  */
 angular.module('kuveij')
-    .controller('singleMediaController', ['$scope', 'ajaxFactory', '$routeParams', 'loginFactory', '$rootScope', 'AUTH_EVENTS', '$sce', 'MediaService', '$window',
-        function ($scope, ajaxFactory, $routeParams, $window, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
+    .controller('singleMediaController', ['$scope', 'ajaxFactory', '$routeParams', 'loginFactory', '$rootScope', 'AUTH_EVENTS', '$sce', 'MediaService',
+        function ($scope, ajaxFactory, $routeParams, loginFactory, $rootScope, AUTH_EVENTS, $sce, MediaService) {
             var id = $routeParams.id;
 
             ajaxFactory.loadOneMedia(id).success(function (data) {
                 $scope.file = data;
-                ajaxFactory.loadComments(id).success(function (data) {
-                    $scope.comments = data;
-                });
+            });
+
+            ajaxFactory.loadComments(id).success(function (data) {
+                $scope.comments = data;
             });
 
             $scope.addLike = function () {
@@ -47,25 +48,34 @@ angular.module('kuveij')
                 }
             };
 
-            $scope.trustSource = function (src) {
+            $scope.trustSrc = function (src) {
                 return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
             };
 
             $scope.nextMedia = function () {
                 var nextFile = id - (-1);
+
                 window.location.assign('/src/app.html#/image/' + nextFile);
+                ajaxFactory.loadOneMedia(id).success(function (data) {
+                    $scope.file = data;
+                });
             };
 
             $scope.previousMedia = function () {
                 var prevFile = id - 1;
                 window.location.assign('/src/app.html#/image/' + prevFile);
+                ajaxFactory.loadOneMedia(id).success(function (data) {
+                    $scope.file = data;
+                });
             };
-
             $scope.randomMedia = function () {
                 ajaxFactory.loadRandomMedia().success(function (data) {
                     $scope.file = data;
                     window.location.assign('/src/app.html#/image/' + data.fileId);
+                    ajaxFactory.loadOneMedia(id).success(function (data) {
+                        $scope.file = data;
+                    });
                 });
             };
 
-    }]);
+        }]);

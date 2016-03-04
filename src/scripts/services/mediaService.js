@@ -11,6 +11,9 @@ angular.module('kuveij')
                 $rootScope.$broadcast('mediaevent', 'Variables updated');
             };
 
+            $rootScope.getMediaUrl = function () {
+                return mediaVariables.mediaUrl;
+            };
 
             return mediaVariables;
         }]);
