@@ -35,19 +35,16 @@
         </div>
     </div>
 
-    <div ng-repeat="comment in comments" class="col-xs-12 col-sm-10 col-md-10 col-lg-10" id="commentStyle">
-
-        <ul>
-            <div class="col-xs-4" id="comment_date">
-                <p style="color: #ccc"> {{comment.time | javaDate}}</p>
-            </div>
-            <div class="pull-left col-xs-2" id="comment_username">
-                <p>{{comment.username}}</p>
-            </div>
-            <div class="col-xs-6" id="comment_comment">
-                <p>{{comment.comment}}</p>
-            </div>
-        </ul>
+    <div ng-repeat="comment in comments" class="row col-xs-12 col-sm-10 col-md-10 col-lg-10" id="commentStyle">
+        <div class="pull-left col-xs-3" id="comment_date">
+            <p style="color: #ccc"> {{comment.time | javaDate}}</p>
+        </div>
+        <div class="pull-left col-xs-3" id="comment_username">
+            <p>{{comment.username}}</p>
+        </div>
+        <div class="pull-left col-xs-6" id="comment_comment">
+            <p>{{comment.comment}}</p>
+        </div>
     </div>
     <div id="kommenttikentta" class="col-xs-6">
         <form class="form-inline" role="form">

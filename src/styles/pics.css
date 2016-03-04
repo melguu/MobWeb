@@ -27,6 +27,7 @@
 #comment_username {
     color: lightskyblue;
     font-weight: bold;
+    padding-left: -15px;
 }
 
 #header {
@@ -83,12 +84,13 @@ video {
 }
 
 #commentStyle {
-    margin-top: 5px;
     text-align: left;
     align-items: left;
     border: 2px solid #333;
     border-radius: 5px;
     background-color: #333;
+    margin: auto;
+    margin-top: 5px !important;
 }
 
 #next_older {
@@ -133,8 +135,7 @@ video {
     }
 }
 
-#commentdate {
-    margin-right: -15px !important;
+#comment_date {
     text-align: left;
     color: #ccc;
 }
@@ -154,7 +155,7 @@ video {
 }
 
 #like_heart {
-    font-size: 28px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
