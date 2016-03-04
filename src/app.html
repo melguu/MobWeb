@@ -16,31 +16,30 @@
 
 <body ng-controller="mainController">
 
-<navbar></navbar>
+    <navbar></navbar>
 
-<div id="main" class="container">
-    <div ng-view></div>
-</div>
+    <div id="main" class="container">
+        <div ng-view></div>
+    </div>
 
-<div id="footer">
-    <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
-        <div class="row" id="bottomNav">
-            <!--<div class="col-xs-1"></div>-->
-            <div class="col-xs-3 text-center"><a href="#/myImages"><i class="glyphicon glyphicon-user"></i></a></div>
-            <div class="col-xs-3 text-center"><a href="#" id="upload"><i class="glyphicon glyphicon-plus-sign"></i></a>
+    <div id="footer">
+        <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+            <div class="row" id="bottomNav">
+                <!--<div class="col-xs-1"></div>-->
+                <div class="col-xs-3 text-center"><a href="#/myImages"><i class="glyphicon glyphicon-user"></i></a></div>
+                <div class="col-xs-3 text-center"><a href="#" id="upload"><i class="glyphicon glyphicon-plus-sign"></i></a>
+                </div>
+                <div class="col-xs-3 text-center"><a href="#/search"><i class="glyphicon glyphicon-search"></i></a></div>
+                <div class="col-xs-2 text-center"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></div>
+                <div class="col-xs-1"></div>
             </div>
-            <div class="col-xs-3 text-center"><a href="#/search"><i class="glyphicon glyphicon-search"></i></a></div>
-            <div class="col-xs-2 text-center"><a href="#"><i class="glyphicon glyphicon-cog"></i></a></div>
-            <div class="col-xs-1"></div>
         </div>
     </div>
-</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
 
 <!-- Include angular files & plugins -->
 <script src="../bower_components/angular/angular.js"></script>
@@ -67,7 +66,6 @@
 <script src="scripts/controllers/statsController.js"></script>
 <script src="scripts/directives/loginModal.js"></script>
 <script src="scripts/date.js"></script>
-
 
 </body>
 

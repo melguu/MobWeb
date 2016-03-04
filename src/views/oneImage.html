@@ -27,10 +27,11 @@
                 <i ng-model="clicked" ng-click="removeLike()" class="glyphicon glyphicon-heart" style="color:#ff6666"></i>
             </div>
             <div ng-if="!clicked" id="like_heart">
-                <i ng-model="clicked" ng-click="addLike()" class="glyphicon glyphicon-heart" style: color="black"></i>
+                <i ng-model="clicked" ng-click="addLike()" class="glyphicon glyphicon-heart" style="color:black"></i>
             </div>
 
             <button class="btn pull-left" ng-click="previousMedia()">Older</button>
+            <button class="btn" ng-click="randomMedia()">Random</button>
             <button class="btn pull-right" ng-click="nextMedia()">Newer</button>
         </div>
     </div>
@@ -61,7 +62,3 @@
 </div>
 
 </div>
-<!--div class="row">
-    <i ng-click="addLike()" class="glyphicon glyphicon-heart"></i>
-    <i ng-click="removeLike()" class="glyphicon glyphicon-arrow-down"></i>
-</div-->

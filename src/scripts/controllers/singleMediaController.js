@@ -61,6 +61,7 @@ angular.module('kuveij')
                     });
                 }
             };
+
             $scope.sendComment = function () {
                 if (loginFactory.isAuthenticated()) {
                     var dataToComment = {
@@ -83,20 +84,33 @@ angular.module('kuveij')
             };
 
             $scope.nextMedia = function () {
-                id = id + 1;
+                var nextFile = id - (-1);
+
+                window.location.assign('/src/app.html#/image/' + nextFile);
                 ajaxFactory.loadOneMedia(id).success(function (data) {
                     $scope.file = data;
                 });
             };
 
             $scope.previousMedia = function () {
-                id = id - 1;
+                var prevFile = id - 1;
+                window.location.assign('/src/app.html#/image/' + prevFile);
                 ajaxFactory.loadOneMedia(id).success(function (data) {
                     $scope.file = data;
                 });
             };
+
+
+            $scope.randomMedia = function () {
+                ajaxFactory.loadRandomMedia().success(function (data) {
+                    $scope.file = data;
+                    window.location.assign('/src/app.html#/image/' + data.fileId);
+                    ajaxFactory.loadOneMedia(id).success(function (data) {
+                        $scope.file = data;
+                    });
+                });
+            };
+
             $scope.checkLikes();
-
-
 
         }]);

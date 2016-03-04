@@ -39,6 +39,13 @@ angular.module('kuveij')
                     });
             };
 
+            ajaxFunctions.loadRandomMedia = function () {
+                return $http.get(urlBase + 'file/random')
+                    .success(function (data) {
+                        return data;
+                    });
+            };
+
             ajaxFunctions.loadUserMedia = function (username) {
                 return $http.get(urlBase + 'files/user/' + username)
                     .success(function (data) {
