@@ -5,7 +5,7 @@
         </div>
         <button ng-click="search()" class="btn btn-default">Search</button>
     </form>
-    <div class="row">
+    <div ng-show="currentUser" class="row">
         <div class="col-xs-12" id="kuvacontainer">
             <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
                 <div ng-if="file.type == 'image' || type == 'image'">

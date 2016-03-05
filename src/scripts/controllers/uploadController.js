@@ -22,6 +22,7 @@ angular.module('kuveij')
 
                 request.then(function (response) {
                     $scope.upload = "Media uploaded";
+                    $scope.loadMyImages();
                 }, function (error) {
                     $scope.upload = "Media upload failed";
                 });

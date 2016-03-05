@@ -24,7 +24,6 @@ angular.module('kuveij')
             $scope.addLike = function () {
                 if (loginFactory.isAuthenticated()) {
                     ajaxFactory.postLike(loginFactory.userId(), id).success(function (data) {
-                        $scope.liked = data;
                         $scope.clicked = true;
                     });
                 } else {
@@ -35,7 +34,6 @@ angular.module('kuveij')
             $scope.removeLike = function () {
                 if (loginFactory.isAuthenticated()) {
                     ajaxFactory.removeLike(loginFactory.userId(), id).success(function (data) {
-                        $scope.liked = data;
                         $scope.clicked = false;
                     });
                 } else {
@@ -50,7 +48,7 @@ angular.module('kuveij')
                 } else {
 
                     ajaxFactory.loadFavorites(loginFactory.userId()).success(function (data) {
-                        for (var i = 0; data.length; i++) {
+                        for (var i = 0; i < data.length; i++) {
                             if (data[i].fileId == id) {
                                 $scope.clicked = true;
                                 break;
@@ -72,7 +70,6 @@ angular.module('kuveij')
                         ajaxFactory.loadComments(id).success(function (data) {
                             $scope.comments = data;
                         });
-                        $scope.commented = data;
                     });
                 } else {
                     $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);

@@ -28,7 +28,7 @@
                     <div class="img"
                          style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }}
+                        {{ file.title.slice(0,10) }}
                     </div>
                 </a>
             </div>
@@ -39,7 +39,7 @@
                     </audio>
 
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }} <span class="glyphicon glyphicon-music" /</span>
+                        {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-music" /</span>
                     </div>
                 </a>
             </div>
@@ -48,7 +48,7 @@
                 <a ng-href="#/image/{{ file.fileId }}">
                     <video class="img" ng-src="{{trustSrc(file.path)}}" controls></video>
                     <div id="kuvatitle" class="caption">
-                        {{ file.title }} <span class="glyphicon glyphicon-facetime-video"> </span>
+                        {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-facetime-video"> </span>
                     </div>
                 </a>
             </div>

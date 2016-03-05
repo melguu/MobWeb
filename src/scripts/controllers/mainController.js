@@ -5,7 +5,11 @@ angular.module('kuveij')
     .controller('mainController', ['$scope', '$rootScope', 'AUTH_EVENTS', 'loginFactory', 'localStorageService',
         function ($scope, $rootScope, AUTH_EVENTS, loginFactory, localStorageService) {
 
-            $scope.currentUser = loginFactory.getUsername(localStorageService.get("userId"));
+            if (localStorageService.get("userId")){
+                $scope.currentUser = loginFactory.getUsername(localStorageService.get("userId"));
+            }else{
+                $scope.currentUSer = undefined;
+            }
 
             $scope.setCurrentUser = function (user) {
                 $scope.currentUser = user;

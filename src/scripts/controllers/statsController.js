@@ -4,10 +4,6 @@
 angular.module('kuveij')
     .controller('statsController', ['$scope', 'ajaxFactory',
         function ($scope, ajaxFactory) {
-            var image;
-            var audio;
-            var video;
-            var data = [image, video, audio];
 
             ajaxFactory.loadAllComments().success(function (response) {
                 var IdCountMap = {};

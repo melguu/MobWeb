@@ -30,14 +30,15 @@ angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch', 'chart.js'
                 templateUrl: 'views/register.html',
                 controller: 'registerController'
             })
-            .when('/search', {
-                templateUrl: 'views/search.html',
-                controller: 'mediaController'
-            })
 
             .when('/statistics', {
                 templateUrl: 'views/stats.html',
                 controller: 'statsController'
+            })
+
+            .when('/search', {
+                templateUrl: 'views/search.html',
+                controller: 'mediaController'
             })
 
             .otherwise({
