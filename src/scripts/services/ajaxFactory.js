@@ -25,36 +25,6 @@ angular.module('kuveij')
                     });
             };
 
-            ajaxFunctions.loadNextMedia = function (file) {
-                return $http.get(urlBase + 'files')
-                    .success(function (data) {
-                        console.log(file);
-                        console.log(data);
-                        for (var i = 0, iLen = data.length; i < iLen; i++) {
-                            if (data[i].path == file.path) {
-                                var nextFile = data[i - 1];
-                                console.log(nextFile);
-                            }
-                        }
-                        return nextFile;
-                    });
-            };
-
-            ajaxFunctions.loadPreviousMedia = function (file) {
-                return $http.get(urlBase + 'files')
-                    .success(function (data) {
-                        console.log(file);
-                        console.log(data);
-                        for (var i = 0, iLen = data.length; i < iLen; i++) {
-                            if (data[i].path == file.path) {
-                                var prevFile = data[i - 1];
-                                console.log(prevFile);
-                            }
-                        }
-                        return prevFile;
-                    });
-            };
-
             ajaxFunctions.loadFavorites = function (username) {
                 return $http.get(urlBase + 'likes/user/' + username)
                     .success(function (data) {

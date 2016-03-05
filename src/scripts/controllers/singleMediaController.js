@@ -81,14 +81,26 @@ angular.module('kuveij')
             };
 
             $scope.nextMedia = function () {
-                ajaxFactory.loadNextMedia($scope.file).success(function (nextFile) {
-                    $scope.file = nextFile;
+                ajaxFactory.loadAllMedia().success(function (data) {
+                    var allFiles = data;
+                    for (var i = 0, iLen = allFiles.length; i < iLen; i++) {
+                        if (allFiles[i].path == $scope.file.path) {
+                            var nextFile = allFiles[i - 1].fileId;
+                            window.location.assign('/src/app.html#/image/' + nextFile);
+                        }
+                    }
                 });
             };
 
             $scope.previousMedia = function () {
-                ajaxFactory.loadPreviousMedia($scope.file).success(function (prevFile) {
-                    $scope.file = prevFile;
+                ajaxFactory.loadAllMedia().success(function (data) {
+                    var allFiles = data;
+                    for (var i = 0, iLen = allFiles.length; i < iLen; i++) {
+                        if (allFiles[i].path == $scope.file.path) {
+                            var prevFile = allFiles[i + 1].fileId;
+                            window.location.assign('/src/app.html#/image/' + prevFile);
+                        }
+                    }
                 });
             };
 
@@ -105,4 +117,4 @@ angular.module('kuveij')
 
             $scope.checkLikes();
 
-        }]);
+                }]);
