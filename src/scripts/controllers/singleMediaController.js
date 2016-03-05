@@ -81,19 +81,14 @@ angular.module('kuveij')
             };
 
             $scope.nextMedia = function () {
-                var nextFile = id - (-1);
-
-                window.location.assign('/src/app.html#/image/' + nextFile);
-                ajaxFactory.loadOneMedia(id).success(function (data) {
-                    $scope.file = data;
+                ajaxFactory.loadNextMedia($scope.file).success(function (nextFile) {
+                    $scope.file = nextFile;
                 });
             };
 
             $scope.previousMedia = function () {
-                var prevFile = id - 1;
-                window.location.assign('/src/app.html#/image/' + prevFile);
-                ajaxFactory.loadOneMedia(id).success(function (data) {
-                    $scope.file = data;
+                ajaxFactory.loadPreviousMedia($scope.file).success(function (prevFile) {
+                    $scope.file = prevFile;
                 });
             };
 
