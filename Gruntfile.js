@@ -11,7 +11,12 @@ module.exports = function(grunt) {
               'bower_components/jquery/dist/jquery.min.js',
               'bower_components/bootstrap/dist/js/bootstrap.min.js',
               'bower_components/angular/angular.min.js',
-              'bower_components/angular-route/angular-route.js'
+              'bower_components/angular-route/angular-route.js',
+              'bower_components/angular-local-storage/dist/angular-local-storage.js',
+              'bower_components/angular-touch/angular-touch.js',
+              'bower_components/Chart.js/Chart.js',
+              'bower_components/angular-chart.js/dist/angular-chart.js',
+              'bower_components/moment/moment.js'
              ],
         dest: 'build/vendor.js'
       },
@@ -49,7 +54,7 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-                'src/**/*.scss'],
+                'src/**/*.scss','src/**/*.css'],
           dest: 'build/css/'
         }]
       },
@@ -58,7 +63,7 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           src: ['src/**/*.html'],
-          dest: 'build/'
+          dest: 'build/views/'
         }],
         options: {
           process: function (content, srcpath) {
