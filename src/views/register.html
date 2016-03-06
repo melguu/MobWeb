@@ -1,7 +1,22 @@
-<form id="registerForm" enctype="application/x-www-form-urlencoded">
-    <input name="username" type="text" placeholder="username" ng-model="uname">
-    <input name="email" type="text" placeholder="email" ng-model="email">
-    <input name="password" type="password" placeholder="password" ng-model="pword">
-    <button ng-click="sendRegister()">Register</button>
-</form>
-<p>{{ registered }}</p>
+<div class="col-sm-0 col-md-2 col-lg-3">
+</div>
+<div class="col-sm-12 col-md-8 col-lg-6">
+    <form id="registerForm" enctype="application/x-www-form-urlencoded">
+        <div class="form-group">
+            <label>Username</label>
+            <input name="username" type="text" placeholder="username" ng-model="uname" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>E-mail address</label>
+            <input name="email" type="text" placeholder="email" ng-model="email" class="form-control" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input name="password" type="password" placeholder="password" ng-model="pword" class="form-control">
+        </div>
+        <div class="text-center">
+            <button type="submit" ng-click="sendRegister()" class="btn btn-primary">Register</button>
+        </div>
+    </form>
+    <p ng-if="registerSuccess">Successfully registered!</p>
+</div>

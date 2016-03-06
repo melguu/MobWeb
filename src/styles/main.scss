@@ -23,6 +23,11 @@ margin-right: -15px !important;
 float: right!important;
 }*/
 
+@font-face {
+    font-family: Chardons;
+    src: url(fonts/Chardons.ttf);
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -63,8 +68,12 @@ body {
     float: none;
 }
 
-#fileForm {
-    text-align: center;
+#fileForm label {
+    margin: 0.5em;
+}
+
+#fileForm input {
+    margin: 0.5em;
 }
 
 audio {
@@ -90,6 +99,8 @@ video {
 
 #kuveij_header {
     color: #42B8DF;
+    font-family: Chardons;
+    font-size: 225%;
 }
 
 #loadMore {
@@ -99,6 +110,18 @@ video {
 
 .navbar-brand {
     line-height: 20px !important;
+}
+
+#imagesOrFavorites {
+    text-align: center;
+}
+
+#imageNav {
+    text-align: center;
+}
+
+#searchBtn {
+    margin: 0.5em;
 }
 
 // your own css/scss ends

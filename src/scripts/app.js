@@ -6,7 +6,7 @@ angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch', 'chart.js'
 
 
         $routeProvider
-            // route for the about page
+        // route for the about page
             .when('/', {
                 templateUrl: 'views/allMedia.html',
                 controller: 'mediaController'
@@ -16,33 +16,38 @@ angular.module('kuveij', ['ngRoute', 'LocalStorageModule', 'ngTouch', 'chart.js'
                 controller: 'uploadController'
             })
 
-            .when('/image/:id', {
-                templateUrl: 'views/oneImage.html',
-                controller: 'singleMediaController'
-            })
+        .when('/image/:id', {
+            templateUrl: 'views/oneImage.html',
+            controller: 'singleMediaController'
+        })
 
-            .when('/login', {
-                templateUrl: 'views/login.html',
-                controller: 'loginController'
-            })
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'loginController'
+        })
 
-            .when('/register', {
-                templateUrl: 'views/register.html',
-                controller: 'registerController'
-            })
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'registerController'
+        })
 
-            .when('/statistics', {
-                templateUrl: 'views/stats.html',
-                controller: 'statsController'
-            })
+        .when('/upload', {
+            templateUrl: 'views/upload.html',
+            controller: 'uploadController'
+        })
 
-            .when('/search', {
-                templateUrl: 'views/search.html',
-                controller: 'mediaController'
-            })
+        .when('/statistics', {
+            templateUrl: 'views/stats.html',
+            controller: 'statsController'
+        })
 
-            .otherwise({
-                redirectTo: '/'
-            });
+        .when('/search', {
+            templateUrl: 'views/search.html',
+            controller: 'mediaController'
+        })
+
+        .otherwise({
+            redirectTo: '/'
+        });
 
     });

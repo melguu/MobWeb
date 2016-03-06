@@ -85,7 +85,8 @@ angular.module('kuveij')
                     var allFiles = data;
                     for (var i = 0, iLen = allFiles.length; i < iLen; i++) {
                         if (allFiles[i].path == $scope.file.path) {
-                            var nextFile = allFiles[i - 1].fileId;
+                            var thisIndex = i - 1;
+                            var nextFile = allFiles[thisIndex].fileId;
                             window.location.assign('/src/app.html#/image/' + nextFile);
                         }
                     }
@@ -97,7 +98,8 @@ angular.module('kuveij')
                     var allFiles = data;
                     for (var i = 0, iLen = allFiles.length; i < iLen; i++) {
                         if (allFiles[i].path == $scope.file.path) {
-                            var prevFile = allFiles[i + 1].fileId;
+                            var thisIndex = i + 1;
+                            var prevFile = allFiles[thisIndex].fileId;
                             window.location.assign('/src/app.html#/image/' + prevFile);
                         }
                     }
