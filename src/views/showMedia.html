@@ -1,0 +1,38 @@
+<div class="col-xs-12" id="kuvacontainer">
+    <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
+        <div ng-if="file.type == 'image' || type == 'image'">
+            <a ng-href="#/image/{{ file.fileId }}">
+                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                <div class="caption kuvatitle">
+                    {{ file.title.slice(0,10) }}
+                </div>
+            </a>
+        </div>
+        <div ng-if="file.type == 'audio' || type == 'audio'">
+            <a ng-href="#/image/{{ file.fileId }}">
+                <div class="img">
+                    <div id="audioglyph">
+                        <div class="glyphicon glyphicon-music">
+                        </div>
+                    </div>
+                </div>
+                <div class="caption kuvatitle">
+                    {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-music"></span>
+                </div>
+            </a>
+        </div>
+        <div ng-if="file.type == 'video' || type == 'video'">
+            <a ng-href="#/image/{{ file.fileId }}">
+
+                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn160_{{ file.path }}.png);"></div>
+                <div class="caption kuvatitle">
+                    {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-facetime-video"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <br>
+    <div class="col-xs-12" id="loadMore">
+        <button class="btn" href="#" ng-click="perPage = perPage + 12">Load More</button>
+    </div>
+</div>

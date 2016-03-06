@@ -2,7 +2,7 @@
 <html lang="en" ng-app="kuveij">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -10,62 +10,65 @@
     <!-- Bootstrap -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../bower_components/angular-chart.js/dist/angular-chart.css">
-    <link href="styles/main.scss" rel="stylesheet">
-    <link href="styles/pics.css" rel="stylesheet">
+    <link href="css/main.scss" rel="stylesheet">
+    <link href="css/pics.css" rel="stylesheet">
 </head>
 
 <body ng-controller="mainController">
 
-    <navbar></navbar>
+<navbar></navbar>
 
-    <div id="main" class="container">
-        <div ng-view></div>
-    </div>
+<div id="main" class="container">
+    <div ng-view></div>
+</div>
 
-    <div id="footer">
-        <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
-            <div class="row" id="bottomNav">
-                <!--<div class="col-xs-1"></div>-->
-                <div class="col-xs-3 text-center"><a href="#/myImages"><i class="glyphicon glyphicon-user"></i></a></div>
-                <div class="col-xs-3 text-center"><a href="#/upload" id="upload"><i class="glyphicon glyphicon-plus-sign"></i></a>
-                </div>
-                <div class="col-xs-3 text-center"><a href="#/search"><i class="glyphicon glyphicon-search"></i></a></div>
-                <div class="col-xs-2 text-center"><a href="#/statistics"><i class="glyphicon glyphicon-tasks"></i></a></div>
-                <div class="col-xs-1"></div>
+<div id="footer">
+    <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+        <div class="row" id="bottomNav">
+            <!--<div class="col-xs-1"></div>-->
+            <div class="col-xs-3 text-center"><a href="#/myImages"><i class="glyphicon glyphicon-user"></i></a></div>
+            <div class="col-xs-3 text-center"><a href="#/upload" id="upload"><i
+                    class="glyphicon glyphicon-plus-sign"></i></a>
             </div>
+            <div class="col-xs-3 text-center"><a href="#/search"><i class="glyphicon glyphicon-search"></i></a></div>
+            <div class="col-xs-2 text-center"><a href="#/statistics"><i class="glyphicon glyphicon-tasks"></i></a></div>
+            <div class="col-xs-1"></div>
         </div>
     </div>
+</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Include angular files & plugins -->
-    <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
-    <script src="../bower_components/angular-touch/angular-touch.js"></script>
-    <script src="../bower_components/Chart.js/Chart.js"></script>
-    <script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
-    <script src="../bower_components/moment/moment.js"></script>
+<!-- Include angular files & plugins -->
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-touch/angular-touch.js"></script>
+<script src="../bower_components/Chart.js/Chart.js"></script>
+<script src="../bower_components/angular-chart.js/dist/angular-chart.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
 
-    <!-- Include My App's JS file(s)-->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/directives/navbar.js"></script>
-    <script src="scripts/services/ajaxFactory.js"></script>
-    <script src="scripts/services/loginFactory.js"></script>
-    <script src="scripts/services/mediaService.js"></script>
-    <script src="scripts/controllers/mainController.js"></script>
-    <script src="scripts/controllers/mediaController.js"></script>
-    <script src="scripts/controllers/uploadController.js"></script>
-    <script src="scripts/controllers/singleMediaController.js"></script>
-    <script src="scripts/controllers/loginController.js"></script>
-    <script src="scripts/services/AUTH_EVENTS.js"></script>
-    <script src="scripts/controllers/registerController.js"></script>
-    <script src="scripts/controllers/statsController.js"></script>
-    <script src="scripts/directives/loginModal.js"></script>
-    <script src="scripts/date.js"></script>
+<!-- Include My App's JS file(s)-->
+<script src="scripts/app.js"></script>
+<script src="scripts/directives/navbar.js"></script>
+<script src="scripts/services/ajaxFactory.js"></script>
+<script src="scripts/services/loginFactory.js"></script>
+<script src="scripts/services/mediaService.js"></script>
+<script src="scripts/controllers/mainController.js"></script>
+<script src="scripts/controllers/mediaController.js"></script>
+<script src="scripts/controllers/uploadController.js"></script>
+<script src="scripts/controllers/singleMediaController.js"></script>
+<script src="scripts/controllers/loginController.js"></script>
+<script src="scripts/services/AUTH_EVENTS.js"></script>
+<script src="scripts/controllers/registerController.js"></script>
+<script src="scripts/controllers/statsController.js"></script>
+<script src="scripts/directives/loginModal.js"></script>
+<script src="scripts/directives/mediaDirective.js"></script>
+<script src="scripts/date.js"></script>
+
 
 </body>
 
