@@ -54,12 +54,17 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-                'src/**/*.scss','src/**/*.css',
-            'bower_components/angular-chart.js/dist/angular-chart.css',
-            'bower_components/bootstrap-sass/assets/fonts/bootstrap/',
-            'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss'],
+            'src/**/*.css',
+            'bower_components/angular-chart.js/dist/angular-chart.css'],
           dest: 'build/css/'
         }]
+      },
+      fonts: {
+        files: [
+          {expand: true, flatten: true, src: ['src/fonts/*.ttf'], dest: 'build/fonts/'},
+          {expand: true, flatten: true, src: ['bower_components/bootstrap/fonts/*'], dest: 'build/fonts/'}
+        ]
+
       },
       html: {
         files: [

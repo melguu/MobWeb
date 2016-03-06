@@ -88,7 +88,7 @@ angular.module('kuveij')
                         if (allFiles[i].path == $scope.file.path) {
                             var thisIndex = i - 1;
                             var nextFile = allFiles[thisIndex].fileId;
-                            window.location.assign('/src/app.html#/image/' + nextFile);
+                            window.location.assign('#/image/' + nextFile);
                         }
                     }
                 });
@@ -101,7 +101,7 @@ angular.module('kuveij')
                         if (allFiles[i].path == $scope.file.path) {
                             var thisIndex = i + 1;
                             var prevFile = allFiles[thisIndex].fileId;
-                            window.location.assign('/src/app.html#/image/' + prevFile);
+                            window.location.assign('#/image/' + prevFile);
                         }
                     }
                 });
@@ -111,7 +111,7 @@ angular.module('kuveij')
             $scope.randomMedia = function () {
                 ajaxFactory.loadRandomMedia().success(function (data) {
                     $scope.file = data;
-                    window.location.assign('/src/app.html#/image/' + data.fileId);
+                    window.location.assign('#/image/' + data.fileId);
                     ajaxFactory.loadOneMedia(id).success(function (data) {
                         $scope.file = data;
                     });
