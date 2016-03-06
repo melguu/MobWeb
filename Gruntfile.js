@@ -63,7 +63,7 @@ module.exports = function(grunt) {
       },
       html: {
         files: [
-          {expand: true, flatten: true, src: ['src/app.html'], dest: 'build/'},
+          {expand: true, flatten: true, src: ['src/index.html'], dest: 'build/'},
           {expand: true, flatten: true, src: ['src/views/*.html'], dest: 'build/views/'}
         ],
         options: {
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
             content = content.replace(/<script.*script>\s*\n*/g, "");
             // Add concatenated js files just before closing body tag
             content = content.replace(/<\/body>/, '<script src="vendor.js"></script>\n' +
-                                      '<script src="app.js"></script>\n</body>');
+                                      '<script src="app.min.js"></script>\n</body>');
             return content;
           }
         }

@@ -2,11 +2,11 @@
  * Created by Artsi on 20/02/16.
  */
 angular.module('kuveij')
-    .directive('loginDialog', function (AUTH_EVENTS) {
+    .directive('loginDialog', ['AUTH_EVENTS', function (AUTH_EVENTS) {
         return {
             restrict: 'A',
             template: '<div ng-if="visible" ng-include="\'views/login.html\'">',
-            link: function (scope) {
+            link: ['scope', function (scope) {
                 var showDialog = function (){
                     scope.visible = true;
                 };
@@ -19,6 +19,6 @@ angular.module('kuveij')
                 scope.$on(AUTH_EVENTS.loginSuccess, hideDialog);
                 scope.$on(AUTH_EVENTS.notAuthenticated, showDialog);
                 scope.$on(AUTH_EVENTS.logoutSuccess, showDialog);
-            }
+            }]
         };
-    });
+    }]);
