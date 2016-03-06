@@ -1,47 +1,53 @@
- <form enctype="application/x-www-form-urlencoded" novalidate>
+<div class="col-xs-12" id="searchForm">
+    <form enctype="application/x-www-form-urlencoded" novalidate>
         <div class="form-group">
             <label for="search">Search</label>
             <input type="text" ng-model="keywords" class="form-control" id="search" placeholder="Search title..." />
         </div>
-        <button ng-click="search()" class="btn btn-default">Search</button>
-    </form>
-    <div ng-show="currentUser" class="row">
-        <div class="col-xs-12" id="kuvacontainer">
-            <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
-                <div ng-if="file.type == 'image' || type == 'image'">
-                    <a ng-href="#/image/{{ file.fileId }}">
-                        <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
-                        <div class="caption kuvatitle">
-                            {{ file.title.slice(0,10) }}
-                        </div>
-                    </a>
-                </div>
-                <div ng-if="file.type == 'audio' || type == 'audio'">
-                    <a ng-href="#/image/{{ file.fileId }}">
-                        <div class="img">
-                            <div id="audioglyph">
-                                <div class="glyphicon glyphicon-music">
-                                </div>
+</div>
+<div class="col-xs-12" id="searchButton">
+    <button ng-click="search()" class="btn btn-default">Search</button>
+</div>
+</form>
+
+</div>
+<div ng-show="currentUser" class="row">
+    <div class="col-xs-12" id="kuvacontainer">
+        <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
+            <div ng-if="file.type == 'image' || type == 'image'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                    <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                    <div class="caption kuvatitle">
+                        {{ file.title.slice(0,10) }}
+                    </div>
+                </a>
+            </div>
+            <div ng-if="file.type == 'audio' || type == 'audio'">
+                <a ng-href="#/image/{{ file.fileId }}">
+                    <div class="img">
+                        <div id="audioglyph">
+                            <div class="glyphicon glyphicon-music">
                             </div>
                         </div>
-                        <div class="caption kuvatitle">
-                            {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-music"></span>
-                        </div>
-                    </a>
-                </div>
-                <div ng-if="file.type == 'video' || type == 'video'">
-                    <a ng-href="#/image/{{ file.fileId }}">
-
-                        <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn160_{{ file.path }}.png);"></div>
-                        <div class="caption kuvatitle">
-                            {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-facetime-video"></span>
-                        </div>
-                    </a>
-                </div>
+                    </div>
+                    <div class="caption kuvatitle">
+                        {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-music"></span>
+                    </div>
+                </a>
             </div>
-            <br>
-            <div class="col-xs-12" id="loadMore">
-                <button class="btn" href="#" ng-click="perPage = perPage + 12">Load More</button>
+            <div ng-if="file.type == 'video' || type == 'video'">
+                <a ng-href="#/image/{{ file.fileId }}">
+
+                    <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn160_{{ file.path }}.png);"></div>
+                    <div class="caption kuvatitle">
+                        {{ file.title.slice(0,10) }} <span class="glyphicon glyphicon-facetime-video"></span>
+                    </div>
+                </a>
             </div>
         </div>
+        <br>
+        <div class="col-xs-12" id="loadMore">
+            <button class="btn" href="#" ng-click="perPage = perPage + 12">Load More</button>
+        </div>
     </div>
+</div>

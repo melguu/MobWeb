@@ -29,10 +29,18 @@
             <div ng-if="!clicked" id="like_heart">
                 <i ng-model="clicked" ng-click="addLike()" class="glyphicon glyphicon-heart" style="color:black"></i>
             </div>
+        </div>
 
-            <button class="btn pull-left" ng-click="previousMedia()">Older</button>
-            <button class="btn" ng-click="randomMedia()">Random</button>
-            <button class="btn pull-right" ng-click="nextMedia()">Newer</button>
+        <div id="imageNav" class="row">
+            <div class="col-xs-4">
+                <button class="btn pull-left" ng-click="previousMedia()">Older</button>
+            </div>
+            <div id="randomButton" class="col-xs-4">
+                <button class="btn" ng-click="randomMedia()">Random</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn pull-right" ng-click="nextMedia()">Newer</button>
+            </div>
         </div>
     </div>
 </div>

@@ -3,8 +3,7 @@
     <div class="row" id="upload_myImage">
         <div class="col-xs-5 col-xs-offset-3 text-center">
             <form role="form" id="fileForm">
-                <input class="form-control" name="file" type="file"
-                       onchange="angular.element(this).scope().setMediaFile(this)">
+                <input class="form-control" name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)">
                 <input class="form-control" name="title" type="text" placeholder="title">
                 <input class="form-control" name="description" type="text" placeholder="description">
                 <button class="btn btn-default" ng-click="sendImage()">Upload</button>
@@ -15,8 +14,8 @@
 </div>
 
 <div ng-show="currentUser">
-    <button ng-click="loadMyImages()">Show my images</button>
-    <button ng-click="loadFavorites()">Show my Favorites</button>
+    <button class="btn" ng-click="loadMyImages()">Show my images</button>
+    <button class="btn" ng-click="loadFavorites()">Show my Favorites</button>
 </div>
 
 <div ng-show="currentUser" class="row">
@@ -25,8 +24,7 @@
         <div class="thumbnail" ng-repeat="file in files">
             <div ng-if="file.type == 'image'">
                 <a ng-href="#/image/{{ file.fileId }}">
-                    <div class="img"
-                         style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                    <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
                     <div id="kuvatitle" class="caption">
                         {{ file.title.slice(0,10) }}
                     </div>
