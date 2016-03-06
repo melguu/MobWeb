@@ -54,17 +54,18 @@ module.exports = function(grunt) {
           expand: true,
           flatten: true,
           src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-                'src/**/*.scss','src/**/*.css'],
+                'src/**/*.scss','src/**/*.css',
+            'bower_components/angular-chart.js/dist/angular-chart.css',
+            'bower_components/bootstrap-sass/assets/fonts/bootstrap/',
+            'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss'],
           dest: 'build/css/'
         }]
       },
       html: {
-        files: [{
-          expand: true,
-          flatten: true,
-          src: ['src/**/*.html'],
-          dest: 'build/views/'
-        }],
+        files: [
+          {expand: true, flatten: true, src: ['src/app.html'], dest: 'build/'},
+          {expand: true, flatten: true, src: ['src/views/*.html'], dest: 'build/views/'}
+        ],
         options: {
           process: function (content, srcpath) {
             // Remove all html comments

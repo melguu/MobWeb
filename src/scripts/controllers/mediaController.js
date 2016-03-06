@@ -8,7 +8,6 @@ angular.module('kuveij')
             $scope.changeFileType = function (type) {
                 if (typeof type === "undefined") {
                     ajaxFactory.loadAllMedia().success(function (response) {
-                        console.log(response);
                         $scope.files = response;
                     });
                 } else {
