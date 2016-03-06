@@ -12,8 +12,8 @@ angular.module('kuveij')
 
                 ajaxFactory.register(dataToRegister).success(function (data) {
                     $scope.registered = data;
-                    if (data.status = "ok") {
-                        $scope.registerSuccess = "ok";
+                    if (data.status == "ok") {
+                        $scope.registerSuccess = "New user registered.";
                     }
                 });
             };
