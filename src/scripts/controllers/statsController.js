@@ -28,10 +28,6 @@ angular.module('kuveij')
                 $scope.comments = data.length;
             });
 
-            ajaxFactory.loadAllComments().success(function (data) {
-                $scope.comments = data.length;
-            });
-
             ajaxFactory.countUsers().success(function (data) {
                 $scope.usersRegistered = data.length;
             });

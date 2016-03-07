@@ -2,7 +2,7 @@
     <div class="thumbnail" ng-repeat="file in files | limitTo:perPage">
         <div ng-if="file.type == 'image' || type == 'image'">
             <a ng-href="#/image/{{ file.fileId }}">
-                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/{{ file.path }});"></div>
+                <div class="img" style="background-image:url(http://util.mw.metropolia.fi/uploads/thumbs/tn320_{{ file.path }});"></div>
                 <div class="caption kuvatitle">
                     {{ file.title.slice(0,10) }}
                 </div>
