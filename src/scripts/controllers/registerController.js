@@ -14,6 +14,8 @@ angular.module('kuveij')
                     $scope.registered = data;
                     if (data.status == "ok") {
                         $scope.registerSuccess = "New user registered.";
+                    }else {
+                        $scope.registerSuccess = "Register failed, user with same username exist, please try again with different username.";
                     }
                 });
             };
